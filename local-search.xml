@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>Debian 更改 dns</title>
+    <link href="/2021/05/02/Debian-%E6%9B%B4%E6%94%B9-dns/"/>
+    <url>/2021/05/02/Debian-%E6%9B%B4%E6%94%B9-dns/</url>
+    
+    <content type="html"><![CDATA[<h2 id="修改dns"><a href="#修改dns" class="headerlink" title="修改dns"></a>修改dns</h2><p><code>vim /etc/resolv.conf</code></p><p><strong>打开后键入谷歌 dns :</strong></p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">nameserver</span> <span class="hljs-number">8.8.8.8</span><br>nameserver <span class="hljs-number">4.4.4.4</span><br></code></pre></td></tr></table></figure><h2 id="改变文件属性-防止重启后自动恢复"><a href="#改变文件属性-防止重启后自动恢复" class="headerlink" title="改变文件属性 (防止重启后自动恢复) :"></a>改变文件属性 (防止重启后自动恢复) :</h2><p><code>chattr +i /etc/resolv.conf</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Other</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>dns</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Win10 使用 apksigner 对 apk 进行签名</title>
+    <link href="/2021/05/02/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/"/>
+    <url>/2021/05/02/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/</url>
+    
+    <content type="html"><![CDATA[<h3 id="首先要将-SDK-Build-Tools-加入到环境变量中-我的在"><a href="#首先要将-SDK-Build-Tools-加入到环境变量中-我的在" class="headerlink" title="首先要将 SDK Build Tools 加入到环境变量中, 我的在"></a>首先要将 SDK Build Tools 加入到环境变量中, 我的在</h3><blockquote><p>C:\Users\25423\AppData\Local\Android\Sdk\build-tools\29.0.3</p></blockquote><p>29.0.3是目前的版本号, 配置环境变量: 点击Path, 新建, 把环境路径复制进去, 打开 cmd 输入:</p><p><code>apksigner</code></p><p>有输出表示环境配置成功.</p><h3 id="对apk进行签名"><a href="#对apk进行签名" class="headerlink" title="对apk进行签名"></a>对apk进行签名</h3><ul><li><strong>使用 zipalign 优化应用:</strong></li></ul><p><code>zipalign -v 4 Original.apk Out.apk</code></p><p>-v 是开启详细输出, 4 是将资源文件对齐到 4 字节. 当然也可以使用 -f 覆盖文件输出.</p><ul><li><strong>使用 apksigner 进行签名:</strong></li></ul><p><code>apksigner sign --ks key文件.jks --ks-key-alias 别名 Out.apk</code></p><p>之后输入密码就签名完成了.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>apksigner</tag>
+      
+      <tag>apk签名</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MarkDown 语法</title>
     <link href="/2021/05/01/MarkDown-%E8%AF%AD%E6%B3%95/"/>
     <url>/2021/05/01/MarkDown-%E8%AF%AD%E6%B3%95/</url>

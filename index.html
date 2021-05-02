@@ -182,120 +182,6 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/05/02/Debian-%E6%9B%B4%E6%94%B9-dns/" target="_self">
-          Debian 更改 dns
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/05/02/Debian-%E6%9B%B4%E6%94%B9-dns/" target="_self">
-          
-          
-            
-          
-          修改dns所在文件vim /etc/resolv.conf
-打开后键入谷歌 dns :
-12nameserver 8.8.8.8nameserver 4.4.4.4
-
-改变文件属性 (防止重启后自动恢复) :chattr +i /etc/resolv.conf
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-02 03:09" pubdate>
-              2021-05-02
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Other/">Other</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/dns/">dns</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/05/02/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/" target="_self">
-          Win10 使用 apksigner 对 apk 进行签名
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/05/02/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/" target="_self">
-          
-          
-            
-          
-          首先要将 SDK Build Tools 加入到环境变量中, 我的在
-C:\Users\25423\AppData\Local\Android\Sdk\build-tools\29.0.3
-
-29.0.3是目前的版本号, 配置环境变量: 点击Path, 新建, 把环境路径复制进去, 打开 cmd 输入:
-apksigner
-有输出表示环境配置成功.
-对apk进行签名
-使用 zipalign 优化应
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-02 02:59" pubdate>
-              2021-05-02
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Android/">Android</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/apksigner/">apksigner</a>
-            
-              <a href="/tags/apk%E7%AD%BE%E5%90%8D/">apk签名</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
         <a href="/2021/05/01/MarkDown-%E8%AF%AD%E6%B3%95/" target="_self">
           MarkDown 语法
         </a>
@@ -353,19 +239,25 @@ apksigner
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/05/01/hello-world/" target="_self">
-          Hello World
+        <a href="/2020/04/20/Win10-%E4%B8%8B%E9%85%8D%E7%BD%AE-Android-Studio-%E7%9A%84-Java-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" target="_self">
+          Win10 下配置 Android Studio 的 Java 环境变量
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/05/01/hello-world/" target="_self">
+        <a href="/2020/04/20/Win10-%E4%B8%8B%E9%85%8D%E7%BD%AE-Android-Studio-%E7%9A%84-Java-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" target="_self">
           
           
             
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+          配置环境变量Android Studio的JDK在安装文件夹下的 jre 里, 我的是
+F:\Program Files\Android\Android Studio\jre
+
+新建环境变量名为 JAVA_HOME , 变量值:
+F:\Program Files\Android\Android Studio\jre
+
+再新建一个变量名为 CLASSPATH , 变量值:
+.;%JAVA_HOME%
         </a>
       </p>
 
@@ -373,12 +265,193 @@ Quick
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-01 21:07" pubdate>
-              2021-05-01
+            <time datetime="2020-04-20 11:55" pubdate>
+              2020-04-20
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Other/">Other</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">环境变量</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/04/20/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/" target="_self">
+          Win10 使用 apksigner 对 apk 进行签名
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/04/20/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/" target="_self">
+          
+          
+            
+          
+          添加环境变量首先要将 SDK Build Tools 加入到环境变量中, 我的在
+C:\Users\25423\AppData\Local\Android\Sdk\build-tools\29.0.3
+
+29.0.3是目前的版本号配置环境变量: 点击Path, 新建, 把环境路径复制进去打开 cmd 输入:
+apksigner
+有输出表示环境配置成功.
+对apk进行签名使用 zipalign 优化
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-04-20 02:59" pubdate>
+              2020-04-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Android/">Android</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/apksigner/">apksigner</a>
+            
+              <a href="/tags/apk%E7%AD%BE%E5%90%8D/">apk签名</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/06/21/%E5%9C%A8Debian-%E4%B8%8A%E5%AE%89%E8%A3%85Node-js/" target="_self">
+          在Debian 上安装Node.js
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/06/21/%E5%9C%A8Debian-%E4%B8%8A%E5%AE%89%E8%A3%85Node-js/" target="_self">
+          
+          
+            
+          
+          介绍Node.js 就是运行在服务端的 JavaScript。
+Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。
+Github地址
+开始安装添加Node.js PPA:以下是目前的最新版:
+curl -sL https://deb.nodesource.com/setup_12.x | bash
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-06-21 12:07" pubdate>
+              2019-06-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Other/">Other</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Node-js/">Node.js</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/06/21/Debian-%E6%9B%B4%E6%94%B9-dns/" target="_self">
+          Debian 更改 dns
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/06/21/Debian-%E6%9B%B4%E6%94%B9-dns/" target="_self">
+          
+          
+            
+          
+          修改dns所在文件vim /etc/resolv.conf
+打开后键入谷歌 dns :
+12nameserver 8.8.8.8nameserver 4.4.4.4
+
+改变文件属性 (防止重启后自动恢复) :chattr +i /etc/resolv.conf
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-06-21 03:09" pubdate>
+              2019-06-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Other/">Other</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/dns/">dns</a>
+            
+          </div>
         
       </div>
     </article>

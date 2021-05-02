@@ -4,58 +4,6 @@
   
   
   <entry>
-    <title>Debian 更改 dns</title>
-    <link href="/2021/05/02/Debian-%E6%9B%B4%E6%94%B9-dns/"/>
-    <url>/2021/05/02/Debian-%E6%9B%B4%E6%94%B9-dns/</url>
-    
-    <content type="html"><![CDATA[<h2 id="修改dns所在文件"><a href="#修改dns所在文件" class="headerlink" title="修改dns所在文件"></a>修改dns所在文件</h2><p><code>vim /etc/resolv.conf</code></p><p><strong>打开后键入谷歌 dns :</strong></p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">nameserver</span> <span class="hljs-number">8.8.8.8</span><br>nameserver <span class="hljs-number">4.4.4.4</span><br></code></pre></td></tr></table></figure><h2 id="改变文件属性-防止重启后自动恢复"><a href="#改变文件属性-防止重启后自动恢复" class="headerlink" title="改变文件属性 (防止重启后自动恢复) :"></a>改变文件属性 (防止重启后自动恢复) :</h2><p><code>chattr +i /etc/resolv.conf</code></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Other</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>dns</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Win10 使用 apksigner 对 apk 进行签名</title>
-    <link href="/2021/05/02/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/"/>
-    <url>/2021/05/02/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/</url>
-    
-    <content type="html"><![CDATA[<h2 id="首先要将-SDK-Build-Tools-加入到环境变量中-我的在"><a href="#首先要将-SDK-Build-Tools-加入到环境变量中-我的在" class="headerlink" title="首先要将 SDK Build Tools 加入到环境变量中, 我的在"></a>首先要将 SDK Build Tools 加入到环境变量中, 我的在</h2><blockquote><p>C:\Users\25423\AppData\Local\Android\Sdk\build-tools\29.0.3</p></blockquote><p>29.0.3是目前的版本号, 配置环境变量: 点击Path, 新建, 把环境路径复制进去, 打开 cmd 输入:</p><p><code>apksigner</code></p><p>有输出表示环境配置成功.</p><h2 id="对apk进行签名"><a href="#对apk进行签名" class="headerlink" title="对apk进行签名"></a>对apk进行签名</h2><ul><li><strong>使用 zipalign 优化应用:</strong></li></ul><p><code>zipalign -v 4 Original.apk Out.apk</code></p><p>-v 是开启详细输出, 4 是将资源文件对齐到 4 字节. 当然也可以使用 -f 覆盖文件输出.</p><ul><li><strong>使用 apksigner 进行签名:</strong></li></ul><p><code>apksigner sign --ks key文件.jks --ks-key-alias 别名 Out.apk</code></p><p>之后输入密码就签名完成了.</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>apksigner</tag>
-      
-      <tag>apk签名</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>MarkDown 语法</title>
     <link href="/2021/05/01/MarkDown-%E8%AF%AD%E6%B3%95/"/>
     <url>/2021/05/01/MarkDown-%E8%AF%AD%E6%B3%95/</url>
@@ -81,13 +29,102 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2021/05/01/hello-world/"/>
-    <url>/2021/05/01/hello-world/</url>
+    <title>Win10 下配置 Android Studio 的 Java 环境变量</title>
+    <link href="/2020/04/20/Win10-%E4%B8%8B%E9%85%8D%E7%BD%AE-Android-Studio-%E7%9A%84-Java-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    <url>/2020/04/20/Win10-%E4%B8%8B%E9%85%8D%E7%BD%AE-Android-Studio-%E7%9A%84-Java-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h1><h4 id="Android-Studio的JDK在安装文件夹下的-jre-里-我的是"><a href="#Android-Studio的JDK在安装文件夹下的-jre-里-我的是" class="headerlink" title="Android Studio的JDK在安装文件夹下的 jre 里, 我的是"></a>Android Studio的JDK在安装文件夹下的 jre 里, 我的是</h4><blockquote><p>F:\Program Files\Android\Android Studio\jre</p></blockquote><h4 id="新建环境变量名为-JAVA-HOME-变量值"><a href="#新建环境变量名为-JAVA-HOME-变量值" class="headerlink" title="新建环境变量名为 JAVA_HOME , 变量值:"></a>新建环境变量名为 <strong>JAVA_HOME</strong> , 变量值:</h4><blockquote><p>F:\Program Files\Android\Android Studio\jre</p></blockquote><h4 id="再新建一个变量名为-CLASSPATH-变量值"><a href="#再新建一个变量名为-CLASSPATH-变量值" class="headerlink" title="再新建一个变量名为 CLASSPATH , 变量值:"></a>再新建一个变量名为 <strong>CLASSPATH</strong> , 变量值:</h4><blockquote><p>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</p></blockquote><h4 id="双击Path-新建-JAVA-HOME-bin-和-JAVA-HOME-jre-bin"><a href="#双击Path-新建-JAVA-HOME-bin-和-JAVA-HOME-jre-bin" class="headerlink" title="双击Path, 新建 %JAVA_HOME%\bin 和 %JAVA_HOME%\jre\bin"></a>双击Path, 新建 <strong>%JAVA_HOME%\bin</strong> 和 <strong>%JAVA_HOME%\jre\bin</strong></h4><h1 id="确认环境配置是否正确"><a href="#确认环境配置是否正确" class="headerlink" title="确认环境配置是否正确"></a>确认环境配置是否正确</h1><p>打开cdm 输入:</p><p><code>java -version</code></p><p>就能看到 java 版本, 再输入:</p><p><code>java </code></p><p>和</p><p><code>javac</code></p><p>显示有输出就说明环境变量配置正确.</p>]]></content>
     
     
+    <categories>
+      
+      <category>Other</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>环境变量</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Win10 使用 apksigner 对 apk 进行签名</title>
+    <link href="/2020/04/20/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/"/>
+    <url>/2020/04/20/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/</url>
+    
+    <content type="html"><![CDATA[<h1 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h1><h3 id="首先要将-SDK-Build-Tools-加入到环境变量中-我的在"><a href="#首先要将-SDK-Build-Tools-加入到环境变量中-我的在" class="headerlink" title="首先要将 SDK Build Tools 加入到环境变量中, 我的在"></a>首先要将 SDK Build Tools 加入到环境变量中, 我的在</h3><blockquote><p>C:\Users\25423\AppData\Local\Android\Sdk\build-tools\29.0.3</p></blockquote><p>29.0.3是目前的版本号<br><strong>配置环境变量:</strong> 点击Path, 新建, 把环境路径复制进去<br>打开 cmd 输入:</p><p><code>apksigner</code></p><p>有输出表示环境配置成功.</p><h1 id="对apk进行签名"><a href="#对apk进行签名" class="headerlink" title="对apk进行签名"></a>对apk进行签名</h1><h3 id="使用-zipalign-优化应用"><a href="#使用-zipalign-优化应用" class="headerlink" title="使用 zipalign 优化应用:"></a>使用 zipalign 优化应用:</h3><p><code>zipalign -v 4 Original.apk Out.apk</code></p><p>-v 是开启详细输出, 4 是将资源文件对齐到 4 字节. 当然也可以使用 -f 覆盖文件输出.</p><h3 id="使用-apksigner-进行签名"><a href="#使用-apksigner-进行签名" class="headerlink" title="使用 apksigner 进行签名:"></a>使用 apksigner 进行签名:</h3><p><code>apksigner sign --ks key文件.jks --ks-key-alias 别名 Out.apk</code></p><p>之后输入密码就签名完成了.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>apksigner</tag>
+      
+      <tag>apk签名</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>在Debian 上安装Node.js</title>
+    <link href="/2019/06/21/%E5%9C%A8Debian-%E4%B8%8A%E5%AE%89%E8%A3%85Node-js/"/>
+    <url>/2019/06/21/%E5%9C%A8Debian-%E4%B8%8A%E5%AE%89%E8%A3%85Node-js/</url>
+    
+    <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Node.js 就是运行在服务端的 JavaScript。</p><p>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p><p><a href="https://github.com/nodesource/distributions">Github地址</a></p><h1 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h1><h3 id="添加Node-js-PPA"><a href="#添加Node-js-PPA" class="headerlink" title="添加Node.js PPA:"></a>添加Node.js PPA:</h3><p>以下是目前的最新版:</p><p><code>curl -sL https://deb.nodesource.com/setup_12.x | bash</code></p><h3 id="安装Node-js和NPM"><a href="#安装Node-js和NPM" class="headerlink" title="安装Node.js和NPM:"></a>安装Node.js和NPM:</h3><p><code>apt-get install -y nodejs</code></p><h3 id="检查Node-js和NPM版本"><a href="#检查Node-js和NPM版本" class="headerlink" title="检查Node.js和NPM版本:"></a>检查Node.js和NPM版本:</h3><p>查看Node.js版本</p><p><code>node -v</code></p><p>查看npm版本</p><p><code>npm -v</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Other</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Node.js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Debian 更改 dns</title>
+    <link href="/2019/06/21/Debian-%E6%9B%B4%E6%94%B9-dns/"/>
+    <url>/2019/06/21/Debian-%E6%9B%B4%E6%94%B9-dns/</url>
+    
+    <content type="html"><![CDATA[<h2 id="修改dns所在文件"><a href="#修改dns所在文件" class="headerlink" title="修改dns所在文件"></a>修改dns所在文件</h2><p><code>vim /etc/resolv.conf</code></p><p><strong>打开后键入谷歌 dns :</strong></p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">nameserver</span> <span class="hljs-number">8.8.8.8</span><br>nameserver <span class="hljs-number">4.4.4.4</span><br></code></pre></td></tr></table></figure><h2 id="改变文件属性-防止重启后自动恢复"><a href="#改变文件属性-防止重启后自动恢复" class="headerlink" title="改变文件属性 (防止重启后自动恢复) :"></a>改变文件属性 (防止重启后自动恢复) :</h2><p><code>chattr +i /etc/resolv.conf</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Other</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>dns</tag>
+      
+    </tags>
     
   </entry>
   

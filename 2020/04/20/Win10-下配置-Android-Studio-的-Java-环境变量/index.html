@@ -18,7 +18,7 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>Debian 更改 dns - Hexo</title>
+  <title>Win10 下配置 Android Studio 的 Java 环境变量 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Debian 更改 dns">
+            <span class="h2" id="subtitle" title="Win10 下配置 Android Studio 的 Java 环境变量">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-05-02 03:09" pubdate>
-        2021年5月2日 凌晨
+      <time datetime="2020-04-20 11:55" pubdate>
+        2020年4月20日 中午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      47 字
+      125 字
     </span>
   
 
@@ -233,14 +233,25 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Debian 更改 dns</h1>
+            <h1 style="display: none">Win10 下配置 Android Studio 的 Java 环境变量</h1>
             
             <div class="markdown-body">
-              <h2 id="修改dns所在文件"><a href="#修改dns所在文件" class="headerlink" title="修改dns所在文件"></a>修改dns所在文件</h2><p><code>vim /etc/resolv.conf</code></p>
-<p><strong>打开后键入谷歌 dns :</strong></p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">nameserver</span> <span class="hljs-number">8.8.8.8</span><br>nameserver <span class="hljs-number">4.4.4.4</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="改变文件属性-防止重启后自动恢复"><a href="#改变文件属性-防止重启后自动恢复" class="headerlink" title="改变文件属性 (防止重启后自动恢复) :"></a>改变文件属性 (防止重启后自动恢复) :</h2><p><code>chattr +i /etc/resolv.conf</code></p>
+              <h1 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h1><h4 id="Android-Studio的JDK在安装文件夹下的-jre-里-我的是"><a href="#Android-Studio的JDK在安装文件夹下的-jre-里-我的是" class="headerlink" title="Android Studio的JDK在安装文件夹下的 jre 里, 我的是"></a>Android Studio的JDK在安装文件夹下的 jre 里, 我的是</h4><blockquote>
+<p>F:\Program Files\Android\Android Studio\jre</p>
+</blockquote>
+<h4 id="新建环境变量名为-JAVA-HOME-变量值"><a href="#新建环境变量名为-JAVA-HOME-变量值" class="headerlink" title="新建环境变量名为 JAVA_HOME , 变量值:"></a>新建环境变量名为 <strong>JAVA_HOME</strong> , 变量值:</h4><blockquote>
+<p>F:\Program Files\Android\Android Studio\jre</p>
+</blockquote>
+<h4 id="再新建一个变量名为-CLASSPATH-变量值"><a href="#再新建一个变量名为-CLASSPATH-变量值" class="headerlink" title="再新建一个变量名为 CLASSPATH , 变量值:"></a>再新建一个变量名为 <strong>CLASSPATH</strong> , 变量值:</h4><blockquote>
+<p>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</p>
+</blockquote>
+<h4 id="双击Path-新建-JAVA-HOME-bin-和-JAVA-HOME-jre-bin"><a href="#双击Path-新建-JAVA-HOME-bin-和-JAVA-HOME-jre-bin" class="headerlink" title="双击Path, 新建 %JAVA_HOME%\bin 和 %JAVA_HOME%\jre\bin"></a>双击Path, 新建 <strong>%JAVA_HOME%\bin</strong> 和 <strong>%JAVA_HOME%\jre\bin</strong></h4><h1 id="确认环境配置是否正确"><a href="#确认环境配置是否正确" class="headerlink" title="确认环境配置是否正确"></a>确认环境配置是否正确</h1><p>打开cdm 输入:</p>
+<p><code>java -version</code></p>
+<p>就能看到 java 版本, 再输入:</p>
+<p><code>java </code></p>
+<p>和</p>
+<p><code>javac</code></p>
+<p>显示有输出就说明环境变量配置正确.</p>
 
             </div>
             <hr>
@@ -258,7 +269,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/dns/">dns</a>
+                      <a class="hover-with-bg" href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">环境变量</a>
                     
                   </div>
                 
@@ -275,11 +286,17 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2021/05/01/MarkDown-%E8%AF%AD%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MarkDown 语法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/05/02/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/">
+                      <a href="/2020/04/20/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/">
                         <span class="hidden-mobile">Win10 使用 apksigner 对 apk 进行签名</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

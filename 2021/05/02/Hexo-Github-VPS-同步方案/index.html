@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      598 字
+      607 字
     </span>
   
 
@@ -237,19 +237,19 @@
             
             <div class="markdown-body">
               <p>在 GitHub 部署完 Hexo, 使用了之后非常喜欢,  博主原来的博客是用 WordPress 搭建的, 总所周知的原因在 WordPress 上使用 MarkDown 写博客十分的痛苦, 就算是使用插件也有从写到发布的烦恼, 所以干脆就把原来的 WordPress 换成 Hexo, Hexo 可以直接用 MarkDown 写, 写完后一条命令就能发布, 可以说是非常的方便和畅快了.</p>
-<h3 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h3><p>请确保 VPS 安装了下列程序:</p>
+<h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>请确保 VPS 安装了下列程序:</p>
 <ul>
 <li>Nginx</li>
 <li>Git</li>
 </ul>
-<p>这里假定已经安装完了, 我就不赘述一般安装过程了. 之后在 Nginx 的站点上 clone 下在 Github 上托管的源码.</p>
-<p>进入站点所在的目录, 我的是<code>/www/wwwroot/blog.wuyinghao.cn</code>, 然后把 GitHub 上的源码 clone 下来, 并且 修改配置文件 server 下的 root 字段值修改为 clone 后的博客目录路径</p>
+<p>这里假定已经安装完了, 我就不赘述一般安装过程了. </p>
+<h3 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h3><p>在 Nginx 的站点上 clone 下在 Github 上托管的源码.进入站点所在的目录, 我的是<code>/www/wwwroot/blog.wuyinghao.cn</code>, 然后把 GitHub 上的源码 clone 下来, 并且修改配置文件 server 下的 root 字段值修改为 clone 后的博客目录路径</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">server</span> &#123;<br>    <span class="hljs-keyword">listen</span> <span class="hljs-number">80</span>;<br>	<span class="hljs-keyword">listen</span> <span class="hljs-number">443</span> ssl http2;<br>    server_name wuyinghao.cn www.wuyinghao.cn;<br>    <span class="hljs-keyword">index</span> <span class="hljs-keyword">index</span>.php <span class="hljs-keyword">index</span>.html <span class="hljs-keyword">index</span>.htm <span class="hljs-keyword">default</span>.php <span class="hljs-keyword">default</span>.htm <span class="hljs-keyword">default</span>.html;<br>    root /www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io;<br>    &#125;<br></code></pre></td></tr></table></figure>
 
 <p>我的博客在 GitHub 的仓库名是 Takuwy.github.io, 所以修改为: </p>
 <p><code>root /www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io;</code></p>
 <p>现在可以通过域名访问存放在 VPS 上的博客了, 但还没完, 如果我们写了新的文章执行 <code>hexo g -d</code> 时只会将文章同步到 GitHub 上 而在VPS上则没有同步. </p>
-<h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>想要在 Github 上和 VPS 都同步文章, 首先创建 git 用户:</p>
+<h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><h3 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h3><p>想要在 Github 上和 VPS 都同步文章, 首先创建 git 用户:</p>
 <p><code>adduser git</code></p>
 <p>在 /home/git 下创建 hexo.git 空仓：</p>
 <p><code>cd /home/git</code></p>

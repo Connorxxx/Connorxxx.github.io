@@ -236,15 +236,15 @@
             <h1 style="display: none">Win10 使用 apksigner 对 apk 进行签名</h1>
             
             <div class="markdown-body">
-              <h1 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h1><h3 id="首先要将-SDK-Build-Tools-加入到环境变量中-我的在"><a href="#首先要将-SDK-Build-Tools-加入到环境变量中-我的在" class="headerlink" title="首先要将 SDK Build Tools 加入到环境变量中, 我的在"></a>首先要将 SDK Build Tools 加入到环境变量中, 我的在</h3><blockquote>
+              <h2 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h2><h4 id="首先要将-SDK-Build-Tools-加入到环境变量中-我的在"><a href="#首先要将-SDK-Build-Tools-加入到环境变量中-我的在" class="headerlink" title="首先要将 SDK Build Tools 加入到环境变量中, 我的在"></a>首先要将 SDK Build Tools 加入到环境变量中, 我的在</h4><blockquote>
 <p>C:\Users\25423\AppData\Local\Android\Sdk\build-tools\29.0.3</p>
 </blockquote>
 <p>29.0.3是目前的版本号<br><strong>配置环境变量:</strong> 点击Path, 新建, 把环境路径复制进去<br>打开 cmd 输入:</p>
 <p><code>apksigner</code></p>
 <p>有输出表示环境配置成功.</p>
-<h1 id="对apk进行签名"><a href="#对apk进行签名" class="headerlink" title="对apk进行签名"></a>对apk进行签名</h1><h3 id="使用-zipalign-优化应用"><a href="#使用-zipalign-优化应用" class="headerlink" title="使用 zipalign 优化应用:"></a>使用 zipalign 优化应用:</h3><p><code>zipalign -v 4 Original.apk Out.apk</code></p>
+<h2 id="对apk进行签名"><a href="#对apk进行签名" class="headerlink" title="对apk进行签名"></a>对apk进行签名</h2><h4 id="使用-zipalign-优化应用"><a href="#使用-zipalign-优化应用" class="headerlink" title="使用 zipalign 优化应用:"></a>使用 zipalign 优化应用:</h4><p><code>zipalign -v 4 Original.apk Out.apk</code></p>
 <p>-v 是开启详细输出, 4 是将资源文件对齐到 4 字节. 当然也可以使用 -f 覆盖文件输出.</p>
-<h3 id="使用-apksigner-进行签名"><a href="#使用-apksigner-进行签名" class="headerlink" title="使用 apksigner 进行签名:"></a>使用 apksigner 进行签名:</h3><p><code>apksigner sign --ks key文件.jks --ks-key-alias 别名 Out.apk</code></p>
+<h4 id="使用-apksigner-进行签名"><a href="#使用-apksigner-进行签名" class="headerlink" title="使用 apksigner 进行签名:"></a>使用 apksigner 进行签名:</h4><p><code>apksigner sign --ks key文件.jks --ks-key-alias 别名 Out.apk</code></p>
 <p>之后输入密码就签名完成了.</p>
 
             </div>

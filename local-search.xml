@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Hexo+Github 部署教程</title>
+    <link href="/2021/05/02/Hexo+Github%20%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/"/>
+    <url>/2021/05/02/Hexo+Github%20%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo-介绍"><a href="#Hexo-介绍" class="headerlink" title="Hexo 介绍"></a>Hexo 介绍</h2><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p><h2 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h2><p>安装 Hexo 非常简单,  只需几分钟就能安装完成</p><h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>安装之前请确保已经有下列程序:</p><ul><li>Node.js</li><li>Git</li></ul><p>Mac 用户可以使用 brew 安装:</p><p><strong>安装 Node.js:</strong> <code>brew install node</code></p><p><strong>安装 Git:</strong> <code>brew install git</code></p><h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p><code>npm install -g hexo-cli</code></p><p>安装成功后执行下列命令新建本地博客存放文件夹:</p><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pf">hexo init myB<span class="hljs-keyword">log</span><br>cd myB<span class="hljs-keyword">log</span><br>npm install<br></code></pre></td></tr></table></figure><p>完成之后运行 <code>hexo s</code> 命令, 在浏览器输入 <a href="http://localhost:4000/">http://localhost:4000</a> 就可以看到博客了.</p><h2 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h2><p>点击 New repository 创建一个仓库, 仓库名为 &lt;你的用户名&gt;.github.io</p><h3 id="配置-SSH-key"><a href="#配置-SSH-key" class="headerlink" title="配置 SSH key"></a>配置 SSH key</h3><p><code>cat ~/.ssh/id_rsa.pub</code></p><p>如果之前没有配置, 执行下列命令配置本地 git 账户</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs verilog">git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.name</span> <span class="hljs-string">&quot;用户名&quot;</span><br>git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.email</span> <span class="hljs-string">&quot;邮箱地址&quot;</span><br></code></pre></td></tr></table></figure><p>生成密钥 SSH key</p><p><code>ssh-keygen -t rsa -C &#39;邮箱地址</code></p><p>完成后输入 <code>cat ~/.ssh/id_rsa.pub</code> 获取 SSH Key</p><p>获取之后在 <a href="https://github.com/">Github</a> 上添加 SSH Key, 步骤:</p><p><strong>Settings -&gt; SSH and GPG keys  -&gt; New SSH keys -&gt; Add SSH keys</strong></p><h3 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h3><p>修改 _config.yml 文件:</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <br>        <span class="hljs-attr">github:</span> <span class="hljs-string">git@github.com:[你的用户名]/[你的用户名].github.io.git,master</span><br></code></pre></td></tr></table></figure><p>安装部署插件 <a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a></p><p><code>npm install hexo-deployer-git --save</code></p><p>执行下列命令部署上传:</p><p><code>hexo g -d</code></p><p>浏览器访问:  https://你的用户名.github.io 就能看到你的博客了.</p><h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><p>执行下列命令来创建一篇新文章</p><p><code>hexo new 文章名称</code> 或者 <code>hex n 文章名称</code></p><p>文章文件保存在 /source/_posts 中.</p><p>执行下列命名就可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 上看到文章了</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span><br><span class="hljs-attribute">hexo s</span><br></code></pre></td></tr></table></figure><p>最后, 执行 <code>hexo clean &amp;&amp; hexo g -d</code> 命令部署在 Github 上</p><p>浏览器打开 你的用户名.github.io 就完成了.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Other</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MarkDown 语法</title>
     <link href="/2021/05/01/MarkDown-%E8%AF%AD%E6%B3%95/"/>
     <url>/2021/05/01/MarkDown-%E8%AF%AD%E6%B3%95/</url>

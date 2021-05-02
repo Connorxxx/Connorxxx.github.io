@@ -242,7 +242,7 @@
 <li>Nginx</li>
 <li>Git</li>
 </ul>
-<p>这里假定已经安装完了, 我就不赘述一般安装过程了. </p>
+<p>这里假定已经安装完了, 我就不赘述一遍安装过程了. </p>
 <h3 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h3><p>在 Nginx 的站点上 clone 下在 Github 上托管的源码.进入站点所在的目录, 我的是<code>/www/wwwroot/blog.wuyinghao.cn</code>, 然后把 GitHub 上的源码 clone 下来, 并且修改配置文件 server 下的 root 字段值修改为 clone 后的博客目录路径</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">server</span> &#123;<br>    <span class="hljs-keyword">listen</span> <span class="hljs-number">80</span>;<br>	<span class="hljs-keyword">listen</span> <span class="hljs-number">443</span> ssl http2;<br>    server_name wuyinghao.cn www.wuyinghao.cn;<br>    <span class="hljs-keyword">index</span> <span class="hljs-keyword">index</span>.php <span class="hljs-keyword">index</span>.html <span class="hljs-keyword">index</span>.htm <span class="hljs-keyword">default</span>.php <span class="hljs-keyword">default</span>.htm <span class="hljs-keyword">default</span>.html;<br>    root /www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io;<br>    &#125;<br></code></pre></td></tr></table></figure>
 

@@ -257,8 +257,7 @@
 <h3 id="配置-SSH-key"><a href="#配置-SSH-key" class="headerlink" title="配置 SSH key"></a>配置 SSH key</h3><p>获取 SSH Key</p>
 <p><code>cat ~/.ssh/id_rsa.pub</code></p>
 <p>如果之前没有配置, 执行下列命令配置本地 git 账户</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs verilog">git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.name</span> <span class="hljs-string">&quot;用户名&quot;</span><br>git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.email</span> <span class="hljs-string">&quot;邮箱地址&quot;</span><br></code></pre></td></tr></table></figure>
-
+<p><code>git config --global user.name &quot;用户名&quot;</code><br><code>git config --global user.email &quot;邮箱地址&quot;</code></p>
 <p>生成密钥 SSH key</p>
 <p><code>ssh-keygen -t rsa -C &#39;邮箱地址</code></p>
 <p>完成后输入 <code>cat ~/.ssh/id_rsa.pub</code> 获取 SSH Key</p>

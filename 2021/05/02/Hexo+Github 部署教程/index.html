@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      521 字
+      522 字
     </span>
   
 
@@ -268,9 +268,9 @@ npm install</code></pre></div>
 git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.email</span> <span class="hljs-string">&quot;邮箱地址&quot;</span></code></pre></div>
 
 <p>生成密钥 SSH key</p>
-<div class="code-wrapper"><pre><code class="hljs excel">ssh-keygen -<span class="hljs-built_in">t</span> rsa -C &#x27;邮箱地址</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs 1c">ssh-keygen -t rsa -C &#x27;邮箱地址&#x27;</code></pre></div>
 
-<p>完成后输入 <code>cat ~/.ssh/id_rsa.pub</code> 获取 SSH Key</p>
+<p>完成后输入 <code>cat ~/.ssh/id_rsa.pub</code> 获取 SSH Key.</p>
 <p>获取之后在 <a target="_blank" rel="noopener" href="https://github.com/">Github</a> 上添加 SSH Key, 步骤如下:</p>
 <p><strong>Settings -&gt; SSH and GPG keys  -&gt; New SSH keys -&gt; Add SSH keys</strong></p>
 <h3 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h3><p>修改 <code>_config.yml</code> 文件</p>

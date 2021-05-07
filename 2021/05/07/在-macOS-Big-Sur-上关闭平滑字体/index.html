@@ -236,10 +236,10 @@
             <h1 style="display: none">在 macOS Big Sur 上关闭平滑字体</h1>
             
             <div class="markdown-body">
-              <p>将系统更新到 Big Sur 之后, 字体变得很粗, 看起来很模糊. 原因是苹果取消了 <strong>系统偏好设置 -&gt; 通用 -&gt; LCD 平滑字体</strong> 选项并重新启用了 LCD 平滑字体, 要想关闭也很简单, 在终端输入下列命令:</p>
+              <p>将系统更新到 Big Sur 之后, 字体变得很粗, 看起来很模糊. 原因是苹果取消了 <strong>系统偏好设置 -&gt; 通用 -&gt; LCD 平滑字体</strong> 选项并重新启用了 LCD 平滑字体, 要想关闭也很简单, 在终端输入下列命令</p>
 <p><code>defaults -currentHost write -g AppleFontSmoothing -int 0</code></p>
-<p>重新登录使命令生效.</p>
-<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>你可以通过调整命令末尾的数字来调整平滑字体级别</p>
+<p>重新登录使命令生效</p>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>你可以通过调整命令末尾的数字来调整平滑字体级别:</p>
 <ul>
 <li><strong>0</strong> 禁用 LCD 平滑字体</li>
 <li><strong>1</strong> 启用浅平滑字体</li>

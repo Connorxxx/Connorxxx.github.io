@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      125 字
+      126 字
     </span>
   
 
@@ -236,22 +236,25 @@
             <h1 style="display: none">Win10 下配置 Android Studio 的 Java 环境变量</h1>
             
             <div class="markdown-body">
-              <h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><h4 id="Android-Studio的JDK在安装文件夹下的-jre-里-我的是"><a href="#Android-Studio的JDK在安装文件夹下的-jre-里-我的是" class="headerlink" title="Android Studio的JDK在安装文件夹下的 jre 里, 我的是"></a>Android Studio的JDK在安装文件夹下的 jre 里, 我的是</h4><blockquote>
-<p>F:\Program Files\Android\Android Studio\jre</p>
-</blockquote>
-<h4 id="新建环境变量名为-JAVA-HOME-变量值"><a href="#新建环境变量名为-JAVA-HOME-变量值" class="headerlink" title="新建环境变量名为 JAVA_HOME , 变量值:"></a>新建环境变量名为 <strong>JAVA_HOME</strong> , 变量值:</h4><blockquote>
-<p>F:\Program Files\Android\Android Studio\jre</p>
-</blockquote>
-<h4 id="再新建一个变量名为-CLASSPATH-变量值"><a href="#再新建一个变量名为-CLASSPATH-变量值" class="headerlink" title="再新建一个变量名为 CLASSPATH , 变量值:"></a>再新建一个变量名为 <strong>CLASSPATH</strong> , 变量值:</h4><blockquote>
-<p>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</p>
-</blockquote>
-<h4 id="双击Path-新建-JAVA-HOME-bin-和-JAVA-HOME-jre-bin"><a href="#双击Path-新建-JAVA-HOME-bin-和-JAVA-HOME-jre-bin" class="headerlink" title="双击Path, 新建 %JAVA_HOME%\bin 和 %JAVA_HOME%\jre\bin"></a>双击Path, 新建 <strong>%JAVA_HOME%\bin</strong> 和 <strong>%JAVA_HOME%\jre\bin</strong></h4><h2 id="确认环境配置是否正确"><a href="#确认环境配置是否正确" class="headerlink" title="确认环境配置是否正确"></a>确认环境配置是否正确</h2><p>打开cdm 输入:</p>
-<p><code>java -version</code></p>
+              <h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>Android Studio的JDK在安装文件夹下的 jre 里, 我的是</p>
+<p><code>F:\Program Files\Android\Android Studio\jre</code></p>
+<p>新建环境变量名为 <code>JAVA_HOME</code> , 变量值:</p>
+<p><code>F:\Program Files\Android\Android Studio\jre</code></p>
+<p>再新建一个变量名为 <code>CLASSPATH</code> , 变量值:</p>
+<p><code>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</code></p>
+<p>双击Path, 新建 <code>%JAVA_HOME%\bin</code> 和 ``%JAVA_HOME%\jre\bin`</p>
+<h3 id="确认环境配置是否正确"><a href="#确认环境配置是否正确" class="headerlink" title="确认环境配置是否正确"></a>确认环境配置是否正确</h3><p>打开cdm 输入:</p>
+<div class="code-wrapper"><pre><code class="hljs applescript">java -<span class="hljs-built_in">version</span></code></pre></div>
+
 <p>就能看到 java 版本, 再输入:</p>
-<p><code>java </code></p>
+<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">java</span></code></pre></div>
+
 <p>和</p>
-<p><code>javac</code></p>
-<p>显示有输出就说明环境变量配置正确.</p>
+<div class="code-wrapper"><pre><code>javac
+```
+
+显示有输出就说明环境变量配置正确.
+</code></pre></div>
 
             </div>
             <hr>

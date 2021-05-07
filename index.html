@@ -195,8 +195,11 @@
           
           将系统更新到 Big Sur 之后, 字体变得很粗, 看起来很模糊. 原因是苹果取消了 系统偏好设置 -&gt; 通用 -&gt; LCD 平滑字体 选项并重新启用了 LCD 平滑字体, 要想关闭也很简单, 在终端输入下列命令
 defaults -currentHost write -g AppleFontSmoothing -int 0
+
+
+
 重新登录使命令生效
-Note你可以通过调整命令末尾的数字来
+Note你可以通过调整命令末尾的
         </a>
       </p>
 
@@ -306,8 +309,9 @@ Git
 Mac 用户可以使用 brew 安装:
 安装 Node.js
  brew install node
+
 安装 Git
- b
+ 
         </a>
       </p>
 
@@ -357,14 +361,22 @@ Mac 用户可以使用 brew 安装:
           
             
           
-          标题示例:123456# 这是一级标题## 这是二级标题### 这是三级标题#### 这是四级标题##### 这是五级标题###### 这是六级标题
+          标题示例:# 这是一级标题
+## 这是二级标题
+### 这是三级标题
+#### 这是四级标题
+##### 这是五级标题
+###### 这是六级标题
 
 
 效果:这是一级标题这是二级标题这是三级标题这是四级标题这是五级标题这是六级标题
-字体示例:1234**这是加粗的文字***这是倾斜的文字*`***这是斜体加粗的文字***~~这是加删除线的文字~~
+字体示例:**这是加粗的文字**
+*这是倾斜的文字*`
+***这是斜体加粗的文字***
+~~这是加删除线的文字~~
 
 
-效果:这是加粗的文字这是倾斜的文字`这是斜体
+效果:这是加粗的文字这是倾斜的文字`这是斜体加粗
         </a>
       </p>
 
@@ -416,12 +428,10 @@ Mac 用户可以使用 brew 安装:
           
           配置环境变量Android Studio的JDK在安装文件夹下的 jre 里, 我的是
 F:\Program Files\Android\Android Studio\jre
-
 新建环境变量名为 JAVA_HOME , 变量值:
 F:\Program Files\Android\Android Studio\jre
-
 再新建一个变量名为 CLASSPATH , 变量值:
-.;%JAVA_HOME%
+.;%JAVA_HOME%\l
         </a>
       </p>
 
@@ -473,11 +483,13 @@ F:\Program Files\Android\Android Studio\jre
           
           添加环境变量首先要将 SDK Build Tools 加入到环境变量中, 我的在
 C:\Users\25423\AppData\Local\Android\Sdk\build-tools\29.0.3
-
-29.0.3是目前的版本号配置环境变量: 点击Path, 新建, 把环境路径复制进去打开 cmd 输入:
+29.0.3是目前的版本号
+配置环境变量:
+点击Path, 新建, 把环境路径复制进去打开 cmd 输入:
 apksigner
+
 有输出表示环境配置成功.
-对apk进行签名使用 zipalign 优化
+对apk进行签名使用 zipalign 优
         </a>
       </p>
 
@@ -584,11 +596,12 @@ curl -sL https://deb.nodesource.com/setup_12.x | bash
             
           
           修改dns所在文件vim /etc/resolv.conf
+
 打开后键入谷歌 dns :
-12nameserver 8.8.8.8nameserver 4.4.4.4
+nameserver 8.8.8.8
+nameserver 4.4.4.4
 
 改变文件属性 (防止重启后自动恢复) :chattr +i /etc/resolv.conf
-
         </a>
       </p>
 

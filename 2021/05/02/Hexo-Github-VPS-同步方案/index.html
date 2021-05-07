@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      631 字
+      654 字
     </span>
   
 
@@ -250,25 +250,31 @@
 <p><code>root /www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io;</code></p>
 <p>根据情况把上面的换成自己的就可以了.</p>
 <p>现在可以通过域名访问存放在 VPS 上的博客了, 但还没完, 如果我们写了新的文章执行 <code>hexo g -d</code> 时只会将文章同步到 GitHub 上 而在VPS上则没有同步. </p>
-<h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><h3 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h3><p>想要在 Github 上和 VPS 都同步文章, 首先创建 git 用户:</p>
-<p><code>adduser git</code></p>
-<p>在 /home/git 下创建 hexo.git 空仓：</p>
-<p><code>cd /home/git</code></p>
-<p><code>git init --bare hexo.git</code></p>
-<p>修改 hexo.git 的所有者和组权限：</p>
-<p><code>chown -R git:git hexo.git</code></p>
-<p>获取本地电脑 SSH Key：</p>
+<h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><h3 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h3><h4 id="创建-git-用户"><a href="#创建-git-用户" class="headerlink" title="创建 git 用户"></a>创建 git 用户</h4><p><code>adduser git</code></p>
+<h4 id="将-git-用户加到-root-用户组"><a href="#将-git-用户加到-root-用户组" class="headerlink" title="将 git 用户加到 root 用户组"></a>将 git 用户加到 root 用户组</h4><p><code>gpasswd -a git sudo</code></p>
+<h4 id="创建-Git-仓库"><a href="#创建-Git-仓库" class="headerlink" title="创建 Git 仓库"></a>创建 Git 仓库</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">su</span> git<br><span class="hljs-keyword">mkdir</span> blog.git<br><span class="hljs-keyword">cd</span> blog.git<br>git init --bare<br></code></pre></td></tr></table></figure>
+
+<p>变更<code>/www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io</code> 目录拥有者为 git：</p>
+<p><code>chown git:git -R /www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io</code></p>
+<h4 id="SSH-Key-配置"><a href="#SSH-Key-配置" class="headerlink" title="SSH Key 配置"></a>SSH Key 配置</h4><p>获取本地电脑 SSH Key</p>
 <p><code>cat ~/.ssh/id_rsa.pub</code></p>
-<p>将 SSH Key 复制到 VPS 上的 /home/git/.ssh/authorized_keys 文件中.</p>
-<p><strong>没有文件就创建给权限, 别问我给多大的权限, 问就是 777!</strong>  (往下的操作都是没有文件的就创建)</p>
-<p>修改 <code>/home/git/hexo.git/hooks/post-receive</code>  内容:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br>git --work-tree=/www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io --git-dir=/home/git/hexo.git checkout -f<br></code></pre></td></tr></table></figure>
+<p>添加 SSH Key</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">su git<br><span class="hljs-keyword">cd</span><br>mkdir <span class="hljs-string">.ssh</span> &amp;&amp; <span class="hljs-keyword">cd</span> <span class="hljs-string">.ssh</span><br>touch authorized_keys<br>vim authorized_keys<br></code></pre></td></tr></table></figure>
+
+<p>将 SSH Key 复制到 VPS 上的 <code>authorized_keys</code> 文件中.</p>
+<h4 id="添加-Git-hooks"><a href="#添加-Git-hooks" class="headerlink" title="添加 Git hooks"></a>添加 Git hooks</h4><p>编辑 <code>post-receive</code>  文件</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">su</span> git<br><span class="hljs-keyword">cd</span><br><span class="hljs-keyword">cd</span> blog.git/hooks<br>vim <span class="hljs-keyword">post</span>-receive<br></code></pre></td></tr></table></figure>
+
+<p>输入下列内容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br>GIT_REPO=/home/git/blog.git<br>TMP_GIT_CLONE=/tmp/blog<br>PUBLIC_WWW=/www/wwwroot/www.wuyinghao.cn/Takuwy.github.io<br>rm -rf <span class="hljs-variable">$&#123;TMP_GIT_CLONE&#125;</span><br>git <span class="hljs-built_in">clone</span> <span class="hljs-variable">$GIT_REPO</span> <span class="hljs-variable">$TMP_GIT_CLONE</span><br>rm -rf <span class="hljs-variable">$&#123;PUBLIC_WWW&#125;</span>/*<br>cp -rf <span class="hljs-variable">$&#123;TMP_GIT_CLONE&#125;</span>/* <span class="hljs-variable">$&#123;PUBLIC_WWW&#125;</span><br></code></pre></td></tr></table></figure>
 
 <p><code>/www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io</code> 是我的网站路径, 换成你的.</p>
-<p>修改本地电脑上的 _config.yml 文件, 添加刚创建的 hexo.git 仓库：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <br>        <span class="hljs-attr">github:</span> <span class="hljs-string">git@github.com:Takuwy/Takuwy.github.io.git,main</span><br>        <span class="hljs-attr">hexo:</span> <span class="hljs-string">git@你的VPS公网IP:/home/git/hexo.git,master</span><br></code></pre></td></tr></table></figure>
+<p>最后修改文件权限:</p>
+<p><code>chmod +x post-receive</code></p>
+<h4 id="Hexo-配置"><a href="#Hexo-配置" class="headerlink" title="Hexo 配置"></a>Hexo 配置</h4><p>修改本地电脑上的 _config.yml 文件, 添加刚创建的 hexo.git 仓库：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <br>        <span class="hljs-attr">github:</span> <span class="hljs-string">git@github.com:Takuwy/Takuwy.github.io.git,main</span><br>        <span class="hljs-attr">hexo:</span> <span class="hljs-string">git@你的VPS公网IP:blog.git,master</span><br></code></pre></td></tr></table></figure>
 
-<p>这样就完成了, 之后执行 <code>hexo g -d</code> 命令时就可以一起同步在 GitHub 和 VPS 上了.</p>
+<p>这样就完成了, 之后执行 <code>hexo -g d</code> 命令时就可以一起同步在 GitHub 和 VPS 上了.</p>
 
             </div>
             <hr>

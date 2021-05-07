@@ -95,13 +95,6 @@
   </url>
   
   <url>
-    <loc>https://www.wuyinghao.cn/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
-    <lastmod>2021-05-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.wuyinghao.cn/tags/apksigner/</loc>
     <lastmod>2021-05-07</lastmod>
     <changefreq>daily</changefreq>
@@ -116,14 +109,21 @@
   </url>
   
   <url>
-    <loc>https://www.wuyinghao.cn/tags/Node-js/</loc>
+    <loc>https://www.wuyinghao.cn/tags/macOS/</loc>
     <lastmod>2021-05-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.wuyinghao.cn/tags/macOS/</loc>
+    <loc>https://www.wuyinghao.cn/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
+    <lastmod>2021-05-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.wuyinghao.cn/tags/Node-js/</loc>
     <lastmod>2021-05-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -8,7 +8,7 @@
     <link href="/2021/05/07/%E5%9C%A8-macOS-Big-Sur-%E4%B8%8A%E5%85%B3%E9%97%AD%E5%B9%B3%E6%BB%91%E5%AD%97%E4%BD%93/"/>
     <url>/2021/05/07/%E5%9C%A8-macOS-Big-Sur-%E4%B8%8A%E5%85%B3%E9%97%AD%E5%B9%B3%E6%BB%91%E5%AD%97%E4%BD%93/</url>
     
-    <content type="html"><![CDATA[<p>将系统更新到 Big Sur 之后, 字体变得很粗, 看起来很模糊. 原因是苹果取消了 <strong>系统偏好设置 -&gt; 通用 -&gt; LCD 平滑字体</strong> 选项并重新启用了 LCD 平滑字体, 要想关闭也很简单, 在终端输入下列命令</p><div class="code-wrapper"><pre><code class="hljs arduino">defaults -currentHost write -g AppleFontSmoothing -<span class="hljs-keyword">int</span> <span class="hljs-number">0</span></code></pre></div><p>重新登录使命令生效</p><h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>你可以通过调整命令末尾的数字来调整平滑字体级别:</p><ul><li>0 禁用 LCD 平滑字体</li><li>1 启用浅平滑字体</li><li>2 启用默认平滑字体</li><li>3 启用粗平滑字体</li></ul><p><em>如果需要重新开启 <strong>LCD 平滑字体</strong> 将 <strong>0</strong> 替换为 <strong>2</strong> 即可</em></p>]]></content>
+    <content type="html"><![CDATA[<p>将系统更新到 Big Sur 之后, 字体变得很粗, 看起来很模糊. 原因是苹果取消了 <strong>系统偏好设置 -&gt; 通用 -&gt; LCD 平滑字体</strong> 选项并重新启用了 LCD 平滑字体, 要想关闭也很简单, 在终端输入下列命令</p><div class="code-wrapper"><pre><code class="hljs arduino">defaults -currentHost write -g AppleFontSmoothing -<span class="hljs-keyword">int</span> <span class="hljs-number">0</span></code></pre></div><p>重新登录后生效</p><h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>你可以通过调整命令末尾的数字来调整平滑字体级别:</p><ul><li>0 禁用平滑字体</li><li>1 启用浅平滑字体</li><li>2 启用默认平滑字体</li><li>3 启用粗平滑字体</li></ul><p><em>如果需要重新开启 <strong>LCD 平滑字体</strong> 将 <strong>0</strong> 替换为 <strong>2</strong> 即可</em></p>]]></content>
     
     
     <categories>

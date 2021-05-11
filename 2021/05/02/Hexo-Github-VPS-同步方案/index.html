@@ -245,17 +245,17 @@
 <li>Git</li>
 </ul>
 <p>这里假定已经安装完了, 我就不赘述一遍安装过程了. </p>
-<h3 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h3><p>在 Nginx 的站点上 clone 下在 Github 上托管的源码.进入站点所在的目录, 我的是<code>/www/wwwroot/blog.wuyinghao.cn</code>, 然后把 GitHub 上的源码 clone 下来, 并且修改配置文件 server 下的 root 字段值修改为 clone 后的博客目录路径</p>
+<h3 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h3><p>在 Nginx 的站点上 clone 下在 Github 上托管的源码.进入站点所在的目录, 我的是<code>/www/wwwroot/www.wuyinghao.cn</code>, 然后把 GitHub 上的源码 clone 下来, 并且修改配置文件 server 下的 root 字段值修改为 clone 后的博客目录路径</p>
 <div class="code-wrapper"><pre><code class="hljs pgsql"><span class="hljs-keyword">server</span> &#123;
     <span class="hljs-keyword">listen</span> <span class="hljs-number">80</span>;
 	<span class="hljs-keyword">listen</span> <span class="hljs-number">443</span> ssl http2;
     server_name wuyinghao.cn www.wuyinghao.cn;
     <span class="hljs-keyword">index</span> <span class="hljs-keyword">index</span>.php <span class="hljs-keyword">index</span>.html <span class="hljs-keyword">index</span>.htm <span class="hljs-keyword">default</span>.php <span class="hljs-keyword">default</span>.htm <span class="hljs-keyword">default</span>.html;
-    root /www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io;
+    root /www/wwwroot/www.wuyinghao.cn/Takuwy.github.io;
     &#125;</code></pre></div>
 
 <p>我的博客在 GitHub 的仓库名是 Takuwy.github.io, 所以修改为</p>
-<p><code>root /www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io;</code></p>
+<p><code>root /www/wwwroot/www.wuyinghao.cn/Takuwy.github.io;</code></p>
 <p>根据情况把上面的换成自己的就可以了.</p>
 <p>现在可以通过域名访问存放在 VPS 上的博客了, 但还没完, 如果我们写了新的文章执行 <code>hexo g -d</code> 时只会将文章同步到 GitHub 上 而在VPS上则没有同步. </p>
 <h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><h3 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h3><p>创建 git 用户</p>
@@ -271,8 +271,8 @@
 <span class="hljs-keyword">cd</span> blog.git
 git init --bare</code></pre></div>
 
-<p>变更 <code>/www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io</code> 目录拥有者为 <strong>git</strong></p>
-<div class="code-wrapper"><pre><code class="hljs awk">chown git:git -R <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/blog.wuyinghao.cn/</span>Takuwy.github.io</code></pre></div>
+<p>变更 <code>/www/wwwroot/www.wuyinghao.cn/Takuwy.github.io</code> 目录拥有者为 <strong>git</strong></p>
+<div class="code-wrapper"><pre><code class="hljs awk">chown git:git -R <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/www.wuyinghao.cn/</span>Takuwy.github.io</code></pre></div>
 
 <h3 id="SSH-Key-配置"><a href="#SSH-Key-配置" class="headerlink" title="SSH Key 配置"></a>SSH Key 配置</h3><p>获取本地电脑 SSH Key</p>
 <div class="code-wrapper"><pre><code class="hljs arcade">cat ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.pub</code></pre></div>
@@ -301,7 +301,7 @@ git <span class="hljs-built_in">clone</span> <span class="hljs-variable">$GIT_RE
 rm -rf <span class="hljs-variable">$&#123;PUBLIC_WWW&#125;</span>/*
 cp -rf <span class="hljs-variable">$&#123;TMP_GIT_CLONE&#125;</span>/* <span class="hljs-variable">$&#123;PUBLIC_WWW&#125;</span></code></pre></div>
 
-<p><code>/www/wwwroot/blog.wuyinghao.cn/Takuwy.github.io</code> 是我的网站路径, 换成你的</p>
+<p><code>/www/wwwroot/www.wuyinghao.cn/Takuwy.github.io</code> 是我的网站路径, 换成你的</p>
 <p>最后修改文件权限</p>
 <div class="code-wrapper"><pre><code class="hljs erlang">chmod +x post-<span class="hljs-keyword">receive</span></code></pre></div>
 

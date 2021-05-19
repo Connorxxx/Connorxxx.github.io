@@ -238,7 +238,7 @@
             <h1 style="display: none">记一次解决 trustd 占用大量 CPU 的过程</h1>
             
             <div class="markdown-body">
-              <p>升级 macOS Big Sur 后偶然后发现 trustd 进程一直占用 cpu 高达  99%, 查阅一番后 了解到 trustd 是用来管理 HTTPS 以及 App证书, 和钥匙串的. 知道它是干什么的之后解决起来就简单多了, 直接把钥匙串文件  <code>System.keychain</code> 删了即可解决.</p>
+              <p>升级 macOS Big Sur 后偶然后发现 trustd 进程一直占用 cpu 高达  99%, 查阅一番后了解到 trustd 是用来管理 HTTPS 以及 App证书, 和钥匙串的. 知道它是干什么的之后解决起来就简单多了, 直接把钥匙串文件  <code>System.keychain</code> 删了即可解决.</p>
 <h3 id="备份删除-System-keychain-文件"><a href="#备份删除-System-keychain-文件" class="headerlink" title="备份删除 System.keychain 文件"></a>备份删除 System.keychain 文件</h3><p>先把 <code>System.keychain</code> 备份到桌面, 以防万一出现问题将备份还原.</p>
 <p>打开终端输入</p>
 <div class="code-wrapper"><pre><code class="hljs awk">cp <span class="hljs-regexp">/Library/</span>Keychains<span class="hljs-regexp">/System.keychain ~/</span>Desktop</code></pre></div>

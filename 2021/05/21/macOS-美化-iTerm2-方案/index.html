@@ -249,17 +249,17 @@
 </ul>
 <p>把 iTerm2 字体改为 FiraCode</p>
 <h3 id="安装-Oh-My-Zsh"><a href="#安装-Oh-My-Zsh" class="headerlink" title="安装 Oh My Zsh"></a>安装 Oh My Zsh</h3><p>Oh My Zsh 是一个开源的 zsh 管理工具, 可以让你以极为简单配置, 就可以用上 Zsh 复杂繁琐的功能. 要安装 Oh My Zsh 只需要在终端输入以下命令</p>
-<div class="code-wrapper"><pre><code class="hljs shell">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</code></pre></div>
+<div class="code-wrapper"><pre><div class="caption"><span>Session</span></div><code class="hljs Shell">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</code></pre></div>
 
 
 
 <h3 id="更改配色为-Dracula"><a href="#更改配色为-Dracula" class="headerlink" title="更改配色为 Dracula"></a>更改配色为 Dracula</h3><p>个人比较喜欢 Dracula 配色, 链接: <a target="_blank" rel="noopener" href="https://draculatheme.com/iterm">https://draculatheme.com/iterm</a></p>
 <p>下载解压后 <strong>Preferences -&gt; Profiles -&gt; Color -&gt; Color Presets -&gt; Import… -&gt; Dracula.itermcolors</strong> 完成</p>
-<h3 id="安装-spaceship-主题"><a href="#安装-spaceship-主题" class="headerlink" title="安装 spaceship 主题"></a>安装 spaceship 主题</h3><h4 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h4><div class="code-wrapper"><pre><code class="hljs shell">git clone https://github.com/denysdovhan/spaceship-prompt.git &quot;$ZSH_CUSTOM/themes/spaceship-prompt&quot; --depth=1</code></pre></div>
+<h3 id="安装-spaceship-主题"><a href="#安装-spaceship-主题" class="headerlink" title="安装 spaceship 主题"></a>安装 spaceship 主题</h3><h4 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h4><div class="code-wrapper"><pre><div class="caption"><span>Session</span></div><code class="hljs Shell">git clone https://github.com/denysdovhan/spaceship-prompt.git &quot;$ZSH_CUSTOM/themes/spaceship-prompt&quot; --depth=1</code></pre></div>
 
-<h4 id="链接到-oh-my-zsh"><a href="#链接到-oh-my-zsh" class="headerlink" title="链接到 oh-my-zsh"></a>链接到 oh-my-zsh</h4><div class="code-wrapper"><pre><code class="hljs shell">ln -s &quot;$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme&quot; &quot;$ZSH_CUSTOM/themes/spaceship.zsh-theme&quot;</code></pre></div>
+<h4 id="链接到-oh-my-zsh"><a href="#链接到-oh-my-zsh" class="headerlink" title="链接到 oh-my-zsh"></a>链接到 oh-my-zsh</h4><div class="code-wrapper"><pre><div class="caption"><span>Session</span></div><code class="hljs Shell">ln -s &quot;$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme&quot; &quot;$ZSH_CUSTOM/themes/spaceship.zsh-theme&quot;</code></pre></div>
 
-<h4 id="修改-zshrc-文件并生效"><a href="#修改-zshrc-文件并生效" class="headerlink" title="修改  .zshrc 文件并生效"></a>修改  <code>.zshrc</code> 文件并生效</h4><div class="code-wrapper"><pre><code class="hljs shell">vim ~/.zshrc
+<h4 id="修改-zshrc-文件并生效"><a href="#修改-zshrc-文件并生效" class="headerlink" title="修改  .zshrc 文件并生效"></a>修改  <code>.zshrc</code> 文件并生效</h4><div class="code-wrapper"><pre><div class="caption"><span>Session</span></div><code class="hljs Shell">vim ~/.zshrc
 ZSH_THEME=&quot;spaceship&quot;
 source ~/.zshrc</code></pre></div>
 
@@ -275,7 +275,7 @@ source ~/.zshrc</code></pre></div>
 <li>zsh-syntax-highlighting</li>
 </ul>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>autojump</code> : 实现文件夹间快速跳转, 想去哪个文件夹就 <code>j + 文件夹名</code></p>
-<div class="code-wrapper"><pre><code class="hljs shell">brew install autojump
+<div class="code-wrapper"><pre><div class="caption"><span>Session</span></div><code class="hljs Shell">brew install autojump
 vim ~/.zshrc
 <span class="hljs-meta">#</span><span class="bash"> 找到 plugins, 添加</span>
 plugins=(autojump)
@@ -283,17 +283,17 @@ plugins=(autojump)
   [ -f /usr/local/etc/profile.d/autojump.sh ] &amp;&amp; . /usr/local/etc/profile.d/autojump.sh</code></pre></div>
 
 <p><code>zsh-autosuggestions</code> : 输入命令时提示自动补全, 按键盘 → 即可补全</p>
-<div class="code-wrapper"><pre><code class="hljs shell">brew install zsh-autosuggestions
+<div class="code-wrapper"><pre><div class="caption"><span>Session</span></div><code class="hljs Shell">brew install zsh-autosuggestions
 <span class="hljs-meta">#</span><span class="bash"> 在末尾添加</span>
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh</code></pre></div>
 
 <p><code>zsh-syntax-highlighting</code> : 人如其名, 语法高亮</p>
-<div class="code-wrapper"><pre><code class="hljs shell">brew install zsh-syntax-highlighting
+<div class="code-wrapper"><pre><div class="caption"><span>Session</span></div><code class="hljs Shell">brew install zsh-syntax-highlighting
 <span class="hljs-meta">#</span><span class="bash"> 在末尾添加</span>
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</code></pre></div>
 
 <p>使插件生效</p>
-<div class="code-wrapper"><pre><code class="hljs shell">source ~/.zshrc</code></pre></div>
+<div class="code-wrapper"><pre><div class="caption"><span>Session</span></div><code class="hljs Shell">source ~/.zshrc</code></pre></div>
 
 <p>搞定收工!</p>
 

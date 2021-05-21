@@ -243,15 +243,15 @@
 <p>29.0.3是目前的版本号</p>
 <p>配置环境变量:</p>
 <p>点击Path, 新建, 把环境路径复制进去<br>打开 cmd 输入:</p>
-<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">apksigner</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">apksigner</code></pre></div>
 
 <p>有输出表示环境配置成功.</p>
 <h3 id="对apk进行签名"><a href="#对apk进行签名" class="headerlink" title="对apk进行签名"></a>对apk进行签名</h3><p>使用 zipalign 优化应用:</p>
-<div class="code-wrapper"><pre><code class="hljs reasonml">zipalign -v <span class="hljs-number">4</span> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Original</span>.</span></span>apk <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Out</span>.</span></span>apk</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">zipalign -v 4 Original.apk Out.apk</code></pre></div>
 
 <p>-v 是开启详细输出, 4 是将资源文件对齐到 4 字节. 当然也可以使用 -f 覆盖文件输出.</p>
 <p>使用 apksigner 进行签名:</p>
-<div class="code-wrapper"><pre><code class="hljs maxima">apksigner <span class="hljs-built_in">sign</span> --ks <span class="hljs-built_in">key</span>文件.jks --ks-<span class="hljs-built_in">key</span>-<span class="hljs-built_in">alias</span> 别名 Out.apk</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">apksigner sign --ks key文件.jks --ks-key-alias 别名 Out.apk</code></pre></div>
 
 <p>之后输入密码就签名完成了.</p>
 

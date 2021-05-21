@@ -246,11 +246,11 @@
 </ul>
 <p>这里假定已经安装完了, 我就不赘述一遍安装过程了. </p>
 <h3 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h3><p>在 Nginx 的站点上 clone 下在 Github 上托管的源码.进入站点所在的目录, 我的是<code>/www/wwwroot/www.wuyinghao.cn</code>, 然后把 GitHub 上的源码 clone 下来, 并且修改配置文件 server 下的 root 字段值修改为 clone 后的博客目录路径</p>
-<div class="code-wrapper"><pre><code class="hljs pgsql"><span class="hljs-keyword">server</span> &#123;
-    <span class="hljs-keyword">listen</span> <span class="hljs-number">80</span>;
-	<span class="hljs-keyword">listen</span> <span class="hljs-number">443</span> ssl http2;
+<div class="code-wrapper"><pre><code class="hljs json">server &#123;
+    listen 80;
+	listen 443 ssl http2;
     server_name wuyinghao.cn www.wuyinghao.cn;
-    <span class="hljs-keyword">index</span> <span class="hljs-keyword">index</span>.php <span class="hljs-keyword">index</span>.html <span class="hljs-keyword">index</span>.htm <span class="hljs-keyword">default</span>.php <span class="hljs-keyword">default</span>.htm <span class="hljs-keyword">default</span>.html;
+    index index.php index.html index.htm default.php default.htm default.html;
     root /www/wwwroot/www.wuyinghao.cn/Takuwy.github.io;
     &#125;</code></pre></div>
 
@@ -259,37 +259,37 @@
 <p>根据情况把上面的换成自己的就可以了.</p>
 <p>现在可以通过域名访问存放在 VPS 上的博客了, 但还没完, 如果我们写了新的文章执行 <code>hexo g -d</code> 时只会将文章同步到 GitHub 上 而在VPS上则没有同步. </p>
 <h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><h3 id="创建-git-仓库"><a href="#创建-git-仓库" class="headerlink" title="创建 git 仓库"></a>创建 git 仓库</h3><p>创建 git 用户</p>
-<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">adduser git</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">adduser git</code></pre></div>
 
 <p>将 git 用户加到 root 用户组</p>
-<div class="code-wrapper"><pre><code class="hljs css">gpasswd -<span class="hljs-selector-tag">a</span> git sudo</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">gpasswd -a git sudo</code></pre></div>
 
 <p>创建 Git 仓库</p>
-<div class="code-wrapper"><pre><code class="hljs stata"><span class="hljs-keyword">su</span> git
-<span class="hljs-keyword">cd</span>
-<span class="hljs-keyword">mkdir</span> blog.git
-<span class="hljs-keyword">cd</span> blog.git
+<div class="code-wrapper"><pre><code class="hljs shell">su git
+cd
+mkdir blog.git
+cd blog.git
 git init --bare</code></pre></div>
 
 <p>变更 <code>/www/wwwroot/www.wuyinghao.cn/Takuwy.github.io</code> 目录拥有者为 <strong>git</strong></p>
-<div class="code-wrapper"><pre><code class="hljs awk">chown git:git -R <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/www.wuyinghao.cn/</span>Takuwy.github.io</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">chown git:git -R /www/wwwroot/www.wuyinghao.cn/Takuwy.github.io</code></pre></div>
 
 <h3 id="SSH-Key-配置"><a href="#SSH-Key-配置" class="headerlink" title="SSH Key 配置"></a>SSH Key 配置</h3><p>获取本地电脑 SSH Key</p>
-<div class="code-wrapper"><pre><code class="hljs arcade">cat ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.pub</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">cat ~/.ssh/id_rsa.pub</code></pre></div>
 
 <p>添加 SSH Key</p>
-<div class="code-wrapper"><pre><code class="hljs jboss-cli">su git
-<span class="hljs-keyword">cd</span>
-mkdir <span class="hljs-string">.ssh</span> &amp;&amp; <span class="hljs-keyword">cd</span> <span class="hljs-string">.ssh</span>
+<div class="code-wrapper"><pre><code class="hljs shell">su git
+cd
+mkdir .ssh &amp;&amp; cd .ssh
 touch authorized_keys
 vim authorized_keys</code></pre></div>
 
 <p>将 SSH Key 复制到 VPS 上的 <code>authorized_keys</code> 文件中</p>
 <h3 id="添加-Git-hooks"><a href="#添加-Git-hooks" class="headerlink" title="添加 Git hooks"></a>添加 Git hooks</h3><p>编辑 <code>post-receive</code>  文件</p>
-<div class="code-wrapper"><pre><code class="hljs stata"><span class="hljs-keyword">su</span> git
-<span class="hljs-keyword">cd</span>
-<span class="hljs-keyword">cd</span> blog.git/hooks
-vim <span class="hljs-keyword">post</span>-receive</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">su git
+cd
+cd blog.git/hooks
+vim post-receive</code></pre></div>
 
 <p>输入下列内容</p>
 <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span>
@@ -303,7 +303,7 @@ cp -rf <span class="hljs-variable">$&#123;TMP_GIT_CLONE&#125;</span>/* <span cla
 
 <p><code>/www/wwwroot/www.wuyinghao.cn/Takuwy.github.io</code> 是我的网站路径, 换成你的</p>
 <p>最后修改文件权限</p>
-<div class="code-wrapper"><pre><code class="hljs erlang">chmod +x post-<span class="hljs-keyword">receive</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">chmod +x post-receive</code></pre></div>
 
 <h3 id="Hexo-配置"><a href="#Hexo-配置" class="headerlink" title="Hexo 配置"></a>Hexo 配置</h3><p>修改本地电脑上的 <code>_config.yml</code> 文件, 添加刚创建的 blog.git 仓库</p>
 <div class="code-wrapper"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span>

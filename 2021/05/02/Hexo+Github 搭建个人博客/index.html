@@ -247,31 +247,31 @@
 </ul>
 <p>Mac 用户可以使用 brew 安装:</p>
 <p>安装 Node.js</p>
- <div class="code-wrapper"><pre><code class="hljs crmsh">brew install <span class="hljs-keyword">node</span><span class="hljs-title"></span></code></pre></div>
+ <div class="code-wrapper"><pre><code class="hljs shell">brew install node</code></pre></div>
 
 <p>安装 Git</p>
- <div class="code-wrapper"><pre><code class="hljs mipsasm"><span class="hljs-keyword">brew </span><span class="hljs-keyword">install </span>git</code></pre></div>
+ <div class="code-wrapper"><pre><code class="hljs shell">brew install git</code></pre></div>
 
 <h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>执行下列命令安装</p>
-<div class="code-wrapper"><pre><code class="hljs avrasm">npm install -g hexo-<span class="hljs-keyword">cli</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">npm install -g hexo-cli</code></pre></div>
 
 <p>安装成功后执行下列命令新建本地博客存放文件夹</p>
-<div class="code-wrapper"><pre><code class="hljs pf">hexo init myB<span class="hljs-keyword">log</span>
-cd myB<span class="hljs-keyword">log</span>
+<div class="code-wrapper"><pre><code class="hljs shell">hexo init myBlog
+cd myBlog
 npm install</code></pre></div>
 
 <p>完成之后运行 <code>hexo s</code> 命令, 在浏览器输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 就可以看到博客了.</p>
 <p>目前的博客系统只是搭建在本地上, 别人是无法查看的. 那怎么样才能让别人也能看到我们的博客呢? 很简单, 把它部署到 GitHub Pages 上.</p>
 <h2 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h2><h3 id="在-GitHub-上创建仓库"><a href="#在-GitHub-上创建仓库" class="headerlink" title="在 GitHub 上创建仓库"></a>在 GitHub 上创建仓库</h3><p>打开 <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>, 还没有账号就先注册一个. 登录账号后找到左上角的 <strong>+</strong> 点击 <strong>New repository</strong> 创建一个新仓库, 在 <em>Repository name</em> 下填入 <code>你的用户名.github.io</code>  其他的保持默认即可, 点击 <strong>Create repository</strong> 完成.</p>
 <h3 id="配置-SSH-key"><a href="#配置-SSH-key" class="headerlink" title="配置 SSH key"></a>配置 SSH key</h3><p>获取 SSH Key</p>
-<div class="code-wrapper"><pre><code class="hljs arcade">cat ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.pub</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">cat ~/.ssh/id_rsa.pub</code></pre></div>
 
 <p>如果之前没有配置 SSH Key, 先执行下列命令配置本地 git 账户</p>
-<div class="code-wrapper"><pre><code class="hljs verilog">git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.name</span> <span class="hljs-string">&quot;用户名&quot;</span>
-git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.email</span> <span class="hljs-string">&quot;邮箱地址&quot;</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">git config --global user.name &quot;用户名&quot;
+git config --global user.email &quot;邮箱地址&quot;</code></pre></div>
 
 <p>生成密钥 SSH key</p>
-<div class="code-wrapper"><pre><code class="hljs 1c">ssh-keygen -t rsa -C &#x27;邮箱地址&#x27;</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">ssh-keygen -t rsa -C &#x27;邮箱地址&#x27;</code></pre></div>
 
 <p>完成后输入 <code>cat ~/.ssh/id_rsa.pub</code> 获取 SSH Key.</p>
 <p>获取之后在 <a target="_blank" rel="noopener" href="https://github.com/">Github</a> 上添加 SSH Key, 步骤如下:</p>
@@ -283,25 +283,25 @@ git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global
         <span class="hljs-attr">github:</span> <span class="hljs-string">git@github.com:[你的用户名]/[你的用户名].github.io.git,master</span></code></pre></div>
 
 <p>安装部署插件 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a></p>
-<div class="code-wrapper"><pre><code class="hljs ada">npm install hexo-deployer-git <span class="hljs-comment">--save</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">npm install hexo-deployer-git --save</code></pre></div>
 
 <p>执行下列命令就可以部署上传到 Github 了</p>
-<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g -d</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">hexo g -d</code></pre></div>
 
 <p>现在只要在浏览器访问:  <code>你的用户名.github.io</code> 任何人都能看到你的博客了.</p>
 <h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>执行下列命令来创建一篇新文章</p>
-<div class="code-wrapper"><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;文章名称&quot;</span> 
-或者 
-hexo n <span class="hljs-string">&quot;文章名称&quot;</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">hexo new &quot;文章名称&quot; 
+<span class="hljs-meta">#</span><span class="bash"> 或者</span> 
+hexo n &quot;文章名称&quot;</code></pre></div>
 
 <p>文章文件保存在 <code>/source/_posts</code> 中, 可以用支持 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Markdown">MarkDown</a> 的编辑器比如 <a target="_blank" rel="noopener" href="https://typora.io/">Typora</a> 编写文章. 具体的 MarkDown 语法可以参考我的另一篇文章 <a href="https://www.wuyinghao.cn/2021/05/01/MarkDown-%E8%AF%AD%E6%B3%95/">MarkDown 语法</a></p>
 <p>当然你要是乐意, 也可以用 vim 等纯文本编辑器 (逃</p>
 <h3 id="发表文章"><a href="#发表文章" class="headerlink" title="发表文章"></a>发表文章</h3><p>执行下列命令就可以在 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 上看到文章了</p>
-<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span>
-<span class="hljs-attribute">hexo s</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">hexo g
+hexo s</code></pre></div>
 
 <p>最后, 执行下列命令部署在 Github 上</p>
-<div class="code-wrapper"><pre><code class="hljs 1c">hexo clean <span class="hljs-meta">&amp;&amp; hexo g -d</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">hexo clean &amp;&amp; hexo g -d</code></pre></div>
 
 <p>在浏览器打开 <code>你的用户名.github.io</code> 就能看到刚刚编写的新文章了.</p>
 

@@ -241,10 +241,10 @@
               <p>升级 macOS Big Sur 后偶然后发现 trustd 进程一直占用 cpu 高达  99%, 查阅一番后了解到 trustd 是用来管理 HTTPS 以及 App证书, 和钥匙串的. 知道它是干什么的之后解决起来就简单多了, 直接把钥匙串文件  <code>System.keychain</code> 删了即可解决.</p>
 <h3 id="备份删除-System-keychain-文件"><a href="#备份删除-System-keychain-文件" class="headerlink" title="备份删除 System.keychain 文件"></a>备份删除 System.keychain 文件</h3><p>先把 <code>System.keychain</code> 备份到桌面, 以防万一出现问题将备份还原.</p>
 <p>打开终端输入</p>
-<div class="code-wrapper"><pre><code class="hljs awk">cp <span class="hljs-regexp">/Library/</span>Keychains<span class="hljs-regexp">/System.keychain ~/</span>Desktop</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">cp /Library/Keychains/System.keychain ~/Desktop</code></pre></div>
 
 <p>不出意外桌面上就多出了一个 <code>System.keychain</code> 文件, 备份好之后将文件删除</p>
-<div class="code-wrapper"><pre><code class="hljs awk">sudo rm <span class="hljs-regexp">/Library/</span>Keychains/System.keychain</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs shell">sudo rm /Library/Keychains/System.keychain</code></pre></div>
 
 <p>输入密码, 搞定!</p>
 <h3 id="重启电脑"><a href="#重启电脑" class="headerlink" title="重启电脑"></a>重启电脑</h3><p>现在已经删除了 <code>system.keychain</code> 文件, 重新启动 Mac, 将重新生成新的文件.</p>

@@ -195,10 +195,11 @@
           
             
           
-          ffmpeg -hwaccel videotoolbox -i input.mkv -c:v hevc_videotoolbox -b:v 13M -c:a copy output.mkv
+          废话不多说, 直接看例子:
+ffmpeg -hwaccel videotoolbox -i input.mkv -c:v hevc_videotoolbox -b:v 13M -c:a copy output.mkv
 
 -hwaccel videotoolbox 表示使用 macOS 的 videotoolbox 硬件编码器 
- hevc_videotoolbox 表示使用 hevc 编码器, 要使用 h264 就改为 h2
+ hevc_videotoolbox 表示使用 hevc 编码器, 要
         </a>
       </p>
 

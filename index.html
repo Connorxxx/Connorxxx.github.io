@@ -184,6 +184,58 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/06/02/FFmpeg-%E5%9C%A8-macOS-%E4%B8%8B%E4%BD%BF%E7%94%A8-GPU%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F%E5%8A%9F%E8%83%BD/" target="_self">
+          FFmpeg 在 macOS 下使用 GPU硬件加速功能
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/06/02/FFmpeg-%E5%9C%A8-macOS-%E4%B8%8B%E4%BD%BF%E7%94%A8-GPU%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F%E5%8A%9F%E8%83%BD/" target="_self">
+          
+          
+            
+          
+          ffmpeg -hwaccel videotoolbox -i input.mkv -c:v hevc_videotoolbox -b:v 13M -c:a copy output.mkv
+
+-hwaccel videotoolbox 表示使用 macOS 的 videotoolbox 硬件编码器,  hevc_videotoolbox 表示使用 hevc编码器, 要使用 h264 就改为 h26
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-02 23:06" pubdate>
+              2021-06-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/macOS/">macOS</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/05/21/macOS-%E7%BE%8E%E5%8C%96-iTerm2-%E6%96%B9%E6%A1%88/" target="_self">
           macOS 美化 iTerm2 方案
         </a>
@@ -691,63 +743,13 @@ curl -sL https://deb.nodesource.com/setup_12.x | bash
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2019/06/21/Debian-%E6%9B%B4%E6%94%B9-dns/" target="_self">
-          Debian 更改 dns
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2019/06/21/Debian-%E6%9B%B4%E6%94%B9-dns/" target="_self">
-          
-          
-            
-          
-          修改dns所在文件vim /etc/resolv.conf
-
-打开后键入谷歌 dns :
-nameserver 8.8.8.8
-nameserver 4.4.4.4
-
-改变文件属性 (防止重启后自动恢复) :chattr +i /etc/resolv.conf
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2019-06-21 03:09" pubdate>
-              2019-06-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%AE%B0%E5%BD%95%E5%90%91/">记录向</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/dns/">dns</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
 
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
 
 
 

@@ -102,13 +102,6 @@
 
   
   <url>
-    <loc>https://www.wuyinghao.cn/tags/dns/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.wuyinghao.cn/tags/macOS/</loc>
     <lastmod>2021-11-23</lastmod>
     <changefreq>daily</changefreq>
@@ -137,6 +130,13 @@
   </url>
   
   <url>
+    <loc>https://www.wuyinghao.cn/tags/dns/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.wuyinghao.cn/tags/MarkDown/</loc>
     <lastmod>2021-11-23</lastmod>
     <changefreq>daily</changefreq>
@@ -145,13 +145,6 @@
   
   <url>
     <loc>https://www.wuyinghao.cn/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.wuyinghao.cn/tags/Node-js/</loc>
     <lastmod>2021-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -173,6 +166,13 @@
   
   <url>
     <loc>https://www.wuyinghao.cn/tags/iTerm2/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.wuyinghao.cn/tags/Node-js/</loc>
     <lastmod>2021-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

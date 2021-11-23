@@ -4,13 +4,27 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2021/11/23/Test/"/>
-    <url>/2021/11/23/Test/</url>
+    <title>Debian 11 安装最新 Nginx</title>
+    <link href="/2021/11/23/Debian-11-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0Nginx/"/>
+    <url>/2021/11/23/Debian-11-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0Nginx/</url>
     
-    <content type="html"><![CDATA[<p>test</p>]]></content>
+    <content type="html"><![CDATA[<p>网上找到教程大多都是编译安装, 太喜欢折腾了…</p><p>直接 <code>apt install nginx</code> 就能安装最新版永远都是最省心的</p><h3 id="官方库安装"><a href="#官方库安装" class="headerlink" title="官方库安装"></a>官方库安装</h3><h4 id="导入密钥"><a href="#导入密钥" class="headerlink" title="导入密钥"></a>导入密钥</h4><div class="code-wrapper"><pre><code class="hljs shell">wget https://nginx.org/keys/nginx_signing.keyapt-key add nginx_signing.key</code></pre></div><h4 id="添加库"><a href="#添加库" class="headerlink" title="添加库"></a>添加库</h4><p>编辑 <code>/etc/apt/sources.list</code> 文件, 添加</p><div class="code-wrapper"><pre><code class="hljs shell">deb http://nginx.org/packages/debian/ bullseye nginxdeb-src http://nginx.org/packages/debian/ bullseye nginx</code></pre></div><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><div class="code-wrapper"><pre><code class="hljs cmake">apt updateapt <span class="hljs-keyword">install</span> nginx</code></pre></div><p>安装完成后使用<code>nginx -v</code> 查看版本.</p>]]></content>
     
     
+    <categories>
+      
+      <category>记录向</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Debian</tag>
+      
+      <tag>Nginx</tag>
+      
+    </tags>
     
   </entry>
   
@@ -26,7 +40,7 @@
     
     <categories>
       
-      <category>记录</category>
+      <category>记录向</category>
       
     </categories>
     
@@ -51,7 +65,7 @@
     
     <categories>
       
-      <category>记录</category>
+      <category>记录向</category>
       
     </categories>
     

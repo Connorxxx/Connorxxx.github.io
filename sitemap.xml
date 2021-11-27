@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.wuyinghao.cn/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/</loc>
+    
+    <lastmod>2021-11-27</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.wuyinghao.cn/2021/11/23/Debian-11-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0Nginx/</loc>
     
     <lastmod>2021-11-27</lastmod>
@@ -116,7 +123,7 @@
   </url>
   
   <url>
-    <loc>https://www.wuyinghao.cn/tags/Hexo/</loc>
+    <loc>https://www.wuyinghao.cn/tags/FFmpeg/</loc>
     <lastmod>2021-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -130,14 +137,14 @@
   </url>
   
   <url>
-    <loc>https://www.wuyinghao.cn/tags/macOS/</loc>
+    <loc>https://www.wuyinghao.cn/tags/Hexo/</loc>
     <lastmod>2021-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.wuyinghao.cn/tags/FFmpeg/</loc>
+    <loc>https://www.wuyinghao.cn/tags/macOS/</loc>
     <lastmod>2021-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -16,23 +16,22 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta name="description" content="废话不多说, 直接看例子: ffmpeg -hwaccel videotoolbox -i input.mkv -c:v hevc_videotoolbox -b:v 13M -c:a copy output.mkv  -hwaccel videotoolbox 表示使用 macOS 的 videotoolbox 硬件编码器   hevc_videotoolbox 表示使用 hevc 编码器, 要">
+  <meta name="description" content="mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4. 编写合并脚本安装 natsort 解决 python 的排序问题 pip3 install natsort  新建一个 concat_sh.py 文件 import os from natsort import natsorted  L &#x3D; [] # 访问 mp4 文件夹 for r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FFmpeg 在 macOS 下使用 GPU硬件加速 功能">
-<meta property="og:url" content="https://www.wuyinghao.cn/2021/06/02/FFmpeg-%E5%9C%A8-macOS-%E4%B8%8B%E4%BD%BF%E7%94%A8-GPU%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:title" content="FFmpeg 合并多个 mp4">
+<meta property="og:url" content="https://www.wuyinghao.cn/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/index.html">
 <meta property="og:site_name" content="我的技术分享">
-<meta property="og:description" content="废话不多说, 直接看例子: ffmpeg -hwaccel videotoolbox -i input.mkv -c:v hevc_videotoolbox -b:v 13M -c:a copy output.mkv  -hwaccel videotoolbox 表示使用 macOS 的 videotoolbox 硬件编码器   hevc_videotoolbox 表示使用 hevc 编码器, 要">
+<meta property="og:description" content="mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4. 编写合并脚本安装 natsort 解决 python 的排序问题 pip3 install natsort  新建一个 concat_sh.py 文件 import os from natsort import natsorted  L &#x3D; [] # 访问 mp4 文件夹 for r">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-06-02T15:06:38.000Z">
-<meta property="article:modified_time" content="2021-11-27T06:18:10.145Z">
+<meta property="article:published_time" content="2021-11-27T06:16:20.000Z">
+<meta property="article:modified_time" content="2021-11-27T08:07:23.188Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="FFmpeg">
-<meta property="article:tag" content="macOS">
 <meta name="twitter:card" content="summary_large_image">
   
     <meta name="google-site-verification" content="Ny1CUsYvP9Vvn57CoFKhAKQE52xoOQwmP3t-HuRqBPg" />
   
-  <title>FFmpeg 在 macOS 下使用 GPU硬件加速 功能 - 我的技术分享</title>
+  <title>FFmpeg 合并多个 mp4 - 我的技术分享</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -178,7 +177,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.4)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="FFmpeg 在 macOS 下使用 GPU硬件加速 功能">
+            <span class="h2" id="subtitle" title="FFmpeg 合并多个 mp4">
               
             </span>
 
@@ -188,8 +187,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-02 23:06" pubdate>
-        2021年6月2日 晚上
+      <time datetime="2021-11-27 14:16" pubdate>
+        2021年11月27日 下午
       </time>
     </span>
   
@@ -199,7 +198,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      301 字
+      950 字
     </span>
   
 
@@ -208,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      3 分钟
     </span>
   
 
@@ -245,16 +244,42 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">FFmpeg 在 macOS 下使用 GPU硬件加速 功能</h1>
+            <h1 style="display: none">FFmpeg 合并多个 mp4</h1>
             
             <div class="markdown-body">
-              <p>废话不多说, 直接看例子:</p>
-<div class="code-wrapper"><pre><code class="hljs shell">ffmpeg -hwaccel videotoolbox -i input.mkv -c:v hevc_videotoolbox -b:v 13M -c:a copy output.mkv</code></pre></div>
+              <p>mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4.</p>
+<h3 id="编写合并脚本"><a href="#编写合并脚本" class="headerlink" title="编写合并脚本"></a>编写合并脚本</h3><p>安装 <code>natsort</code> 解决 python 的排序问题</p>
+<div class="code-wrapper"><pre><code class="hljs shell">pip3 install natsort</code></pre></div>
 
-<p><code>-hwaccel videotoolbox</code> 表示使用 macOS 的 videotoolbox 硬件编码器 </p>
-<p> <code>hevc_videotoolbox</code> 表示使用 hevc 编码器, 要使用 h264 就改为 <code>h264_videotoolbox</code> </p>
-<p><code>-b:v</code> 表示指定目标视频码率, 这里设为 13M. 使用 GPU 进行编码貌似会令 <code>-crf</code> 参数无效, 如果不指定码率的话, 视频画质将会惨不忍睹. </p>
-<p>使用 GPU 硬件加速后基本不会有 CPU 占用, 而且编码速度也得到了极大的提高.</p>
+<p>新建一个 <code>concat_sh.py</code> 文件</p>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">from</span> natsort <span class="hljs-keyword">import</span> natsorted
+
+L = []
+<span class="hljs-comment"># 访问 mp4 文件夹</span>
+<span class="hljs-keyword">for</span> root, dirs, files <span class="hljs-keyword">in</span> os.walk(<span class="hljs-string">&#x27;/video&#x27;</span>):
+    files = natsorted(files)
+    <span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:
+        <span class="hljs-comment"># 拼接 mp4 路径并添加到数组</span>
+        <span class="hljs-keyword">if</span> os.path.splitext(file)[<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;.mp4&#x27;</span>:
+            file_path = os.path.join(root, file)
+            L.append(file_path)
+
+<span class="hljs-comment"># 生成 concat_mp4.sh 文件</span>
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;concat_mp4.sh&#x27;</span>, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:
+    f.write(<span class="hljs-string">&quot;#! /bin/bash\n\n&quot;</span>)
+    <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> L:
+        f.write(<span class="hljs-string">f&quot;ffmpeg -i <span class="hljs-subst">&#123;l&#125;</span> -vcodec copy -acodec copy -vbsf h264_mp4toannexb <span class="hljs-subst">&#123;l.replace(<span class="hljs-string">&#x27;.mp4&#x27;</span>, <span class="hljs-string">&#x27;.ts&#x27;</span>)&#125;</span>\n&quot;</span>)
+
+    f.write(<span class="hljs-string">f&#x27;\nffmpeg -i &quot;concat:<span class="hljs-subst">&#123;<span class="hljs-string">&quot;|&quot;</span>.join([i.replace(<span class="hljs-string">&quot;.mp4&quot;</span>, <span class="hljs-string">&quot;.ts&quot;</span>) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> L])&#125;</span>&quot; -acodec copy -vcodec copy output.mp4\n&#x27;</span>)
+    f.write(<span class="hljs-string">&#x27;rm /video/*.ts&#x27;</span>)
+
+</code></pre></div>
+
+<p>把上面 <code>/video</code> 和 <code>rm /video/*.ts</code> 换成你的视频路径的, 然后在终端运行命令</p>
+<div class="code-wrapper"><pre><code class="hljs shell">python3 concat_sh.py &amp;&amp; bash concat_mp4.sh</code></pre></div>
+
+<p>运行完之后就会在目录下多出一个 <code>output.mp4</code> 文件, 这个就是合并好了的视频文件了.</p>
 
             </div>
             <hr>
@@ -274,8 +299,6 @@
                     
                       <a class="hover-with-bg" href="/tags/FFmpeg/">FFmpeg</a>
                     
-                      <a class="hover-with-bg" href="/tags/macOS/">macOS</a>
-                    
                   </div>
                 
               </div>
@@ -291,18 +314,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/23/Debian-11-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0Nginx/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Debian 11 安装最新 Nginx</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/05/21/macOS-%E7%BE%8E%E5%8C%96-iTerm2-%E6%96%B9%E6%A1%88/">
-                        <span class="hidden-mobile">macOS 美化 iTerm2 方案</span>
+                      <a href="/2021/11/23/Debian-11-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0Nginx/">
+                        <span class="hidden-mobile">Debian 11 安装最新 Nginx</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -324,8 +341,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://www.wuyinghao.cn/2021/06/02/FFmpeg-%E5%9C%A8-macOS-%E4%B8%8B%E4%BD%BF%E7%94%A8-GPU%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F%E5%8A%9F%E8%83%BD/';
-          this.page.identifier = '/2021/06/02/FFmpeg-%E5%9C%A8-macOS-%E4%B8%8B%E4%BD%BF%E7%94%A8-GPU%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F%E5%8A%9F%E8%83%BD/';
+          this.page.url = 'https://www.wuyinghao.cn/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/';
+          this.page.identifier = '/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');

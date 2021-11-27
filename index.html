@@ -192,6 +192,66 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/" target="_self">
+          FFmpeg 合并多个 mp4
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/" target="_self">
+          
+          
+            
+          
+          mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4.
+编写合并脚本安装 natsort 解决 python 的排序问题
+pip3 install natsort
+
+新建一个 concat_sh.py 文件
+import os
+from natsort import natsorted
+
+L = []
+# 访问 mp4 文件夹
+for r
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-27 14:16" pubdate>
+              2021-11-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AE%B0%E5%BD%95%E5%90%91/">记录向</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/FFmpeg/">FFmpeg</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/11/23/Debian-11-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0Nginx/" target="_self">
           Debian 11 安装最新 Nginx
         </a>
@@ -290,9 +350,9 @@ ffmpeg -hwaccel videotoolbox -i input.mkv -c:v hevc_videotoolbox -b:v 13M -c:a c
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/macOS/">macOS</a>
-            
               <a href="/tags/FFmpeg/">FFmpeg</a>
+            
+              <a href="/tags/macOS/">macOS</a>
             
           </div>
         
@@ -692,66 +752,6 @@ F:\Program Files\Android\Android Studio\jre
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">环境变量</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2020/04/20/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/" target="_self">
-          Win10 使用 apksigner 对 apk 进行签名
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/04/20/Win10-%E4%BD%BF%E7%94%A8-apksigner-%E5%AF%B9-apk-%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D/" target="_self">
-          
-          
-            
-          
-          添加环境变量首先要将 SDK Build Tools 加入到环境变量中, 我的在
-C:\Users\25423\AppData\Local\Android\Sdk\build-tools\29.0.3
-29.0.3是目前的版本号
-配置环境变量:
-点击Path, 新建, 把环境路径复制进去打开 cmd 输入:
-apksigner
-
-有输出表示环境配置成功.
-对apk进行签名使用 zipalign 优
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-04-20 02:59" pubdate>
-              2020-04-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%AE%B0%E5%BD%95%E5%90%91/">记录向</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/apksigner/">apksigner</a>
-            
-              <a href="/tags/apk%E7%AD%BE%E5%90%8D/">apk签名</a>
             
           </div>
         

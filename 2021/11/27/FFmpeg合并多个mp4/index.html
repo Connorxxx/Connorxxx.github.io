@@ -16,15 +16,15 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta name="description" content="mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4. 编写合并脚本安装 natsort 解决 python 的排序问题 pip3 install natsort  新建一个 concat_sh.py 文件 import os from natsort import natsorted  L &#x3D; [] # 访问 mp4 文件夹 for r">
+  <meta name="description" content="mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4 编写合并脚本安装 natsort 解决 python 的排序问题 pip3 install natsort  新建一个 concat_sh.py 文件 import os from natsort import natsorted  L &#x3D; [] # 访问 mp4 文件夹 for ro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FFmpeg 合并多个 mp4">
 <meta property="og:url" content="https://www.wuyinghao.cn/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/index.html">
 <meta property="og:site_name" content="我的技术分享">
-<meta property="og:description" content="mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4. 编写合并脚本安装 natsort 解决 python 的排序问题 pip3 install natsort  新建一个 concat_sh.py 文件 import os from natsort import natsorted  L &#x3D; [] # 访问 mp4 文件夹 for r">
+<meta property="og:description" content="mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4 编写合并脚本安装 natsort 解决 python 的排序问题 pip3 install natsort  新建一个 concat_sh.py 文件 import os from natsort import natsorted  L &#x3D; [] # 访问 mp4 文件夹 for ro">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-27T06:16:20.000Z">
-<meta property="article:modified_time" content="2021-11-27T08:07:23.188Z">
+<meta property="article:modified_time" content="2021-11-27T12:48:57.047Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="FFmpeg">
 <meta name="twitter:card" content="summary_large_image">
@@ -198,7 +198,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      950 字
+      956 字
     </span>
   
 
@@ -247,7 +247,7 @@
             <h1 style="display: none">FFmpeg 合并多个 mp4</h1>
             
             <div class="markdown-body">
-              <p>mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4.</p>
+              <p>mp4 文件过多的情况下一条条敲命令显然不够优雅, 这里使用 python 来生成 bash 脚本来合并 mp4</p>
 <h3 id="编写合并脚本"><a href="#编写合并脚本" class="headerlink" title="编写合并脚本"></a>编写合并脚本</h3><p>安装 <code>natsort</code> 解决 python 的排序问题</p>
 <div class="code-wrapper"><pre><code class="hljs shell">pip3 install natsort</code></pre></div>
 
@@ -276,10 +276,10 @@ L = []
 
 </code></pre></div>
 
-<p>把上面 <code>/video</code> 和 <code>rm /video/*.ts</code> 换成你的视频路径的, 然后在终端运行命令</p>
+<p>把上面 <code>/video</code> 和 <code>rm /video/*.ts</code> 里的路径换成你的视频文件夹所在路径, 然后在终端运行命令</p>
 <div class="code-wrapper"><pre><code class="hljs shell">python3 concat_sh.py &amp;&amp; bash concat_mp4.sh</code></pre></div>
 
-<p>运行完之后就会在目录下多出一个 <code>output.mp4</code> 文件, 这个就是合并好了的视频文件了.</p>
+<p>运行完之后就会在目录下多出一个 <code>output.mp4</code> 文件, 这个就是合并好了的视频文件了</p>
 
             </div>
             <hr>

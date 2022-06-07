@@ -54,19 +54,6 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2022/01/13/Resume/"/>
-    <url>/2022/01/13/Resume/</url>
-    
-    <content type="html"><![CDATA[<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul><li>手机：16620401610</li><li>Email：<a href="mailto:&#99;&#111;&#x6e;&#x6e;&#x6f;&#114;&#46;&#x77;&#121;&#104;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#99;&#111;&#x6e;&#x6e;&#x6f;&#114;&#46;&#x77;&#121;&#104;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;</a></li></ul><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul><li>吴英昊 / 男 / 1998</li><li>学校：广州开放大学（本科）</li><li>专业：计算机科学与技术</li><li>现居地：广东 东莞</li><li>期望职位：Android 初级工程师</li><li>GitHub：<a href="https://github.com/Connorxxx">https://github.com/Connorxxx</a></li></ul><h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2><ul><li><strong>Android</strong>：熟悉常见四大组件以及 UI 的开发</li><li><strong>Java</strong>：熟练掌握 Java 基础知识</li><li><strong>Kotlin</strong>：熟练掌握 Kotlin 基础知识</li><li><strong>MVVM</strong>： 擅长MVVM架构设计</li><li><strong>Linux</strong>：熟练使用 Linux</li></ul><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><ul><li><a href="https://github.com/Connorxxx/SunnyWeather">SunnyWeather</a>：天气预报App，采用Kotlin编写，MD设计，MVVM架构</li><li><a href="https://github.com/Connorxxx/ACGSearch">ACGSearch</a>：以图搜图App，采用Kotlin编写，MD设计，MVVM架构</li><li><a href="https://github.com/Connorxxx/Splashgram">Splashgram</a>:  浏览图片、设置壁纸APP, 采用Kotlin编写，MD设计，MVVM架构，DataBinding</li></ul><h2 id="自我总结"><a href="#自我总结" class="headerlink" title="自我总结"></a>自我总结</h2><ul><li>热爱技术和代码</li><li>注重代码质量和细节</li><li>喜欢学习新技术并且愿意深入钻研</li><li>有很好的自学能力</li></ul>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>FFmpeg 合并多个 mp4</title>
     <link href="/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/"/>
     <url>/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/</url>
@@ -135,9 +122,9 @@
     
     <tags>
       
-      <tag>FFmpeg</tag>
-      
       <tag>macOS</tag>
+      
+      <tag>FFmpeg</tag>
       
     </tags>
     

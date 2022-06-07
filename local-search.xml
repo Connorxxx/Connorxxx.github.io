@@ -4,6 +4,69 @@
   
   
   <entry>
+    <title>VPS 使用 SSH-KEY 登陆</title>
+    <link href="/2022/06/07/VPS-%E4%BD%BF%E7%94%A8-SSH-KEY-%E7%99%BB%E9%99%86/"/>
+    <url>/2022/06/07/VPS-%E4%BD%BF%E7%94%A8-SSH-KEY-%E7%99%BB%E9%99%86/</url>
+    
+    <content type="html"><![CDATA[<h3 id="创建文件并设置权限"><a href="#创建文件并设置权限" class="headerlink" title="创建文件并设置权限"></a>创建文件并设置权限</h3><div class="code-wrapper"><pre><code class="hljs shell">mkdir ~/.sshtouch ~/.ssh/authorized_keyschmod 600 ~/.ssh/authorized_keys</code></pre></div><p>之后将本地的公钥复制到<code>authorized_keys</code></p><h3 id="修改SSH配置文件"><a href="#修改SSH配置文件" class="headerlink" title="修改SSH配置文件"></a>修改SSH配置文件</h3><p>有注释就取消注释，没有就添加，或者直接添加也可以</p><div class="code-wrapper"><pre><code class="hljs shell">RSAAuthentication yesPubkeyAuthentication yesAuthorizedKeysFile .ssh/authorized_keysPasswordAuthentication no</code></pre></div><h3 id="重启SSH服务"><a href="#重启SSH服务" class="headerlink" title="重启SSH服务"></a>重启SSH服务</h3><div class="code-wrapper"><pre><code class="hljs shell">systemctl restart sshd</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>记录向</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vps</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>bug 解决记录</title>
+    <link href="/2022/05/24/bug-%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/"/>
+    <url>/2022/05/24/bug-%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h5 id="recyclerview使用notifyItemRangeChanged-导致页面刷新后直接崩溃"><a href="#recyclerview使用notifyItemRangeChanged-导致页面刷新后直接崩溃" class="headerlink" title="recyclerview使用notifyItemRangeChanged()导致页面刷新后直接崩溃"></a>recyclerview使用notifyItemRangeChanged()导致页面刷新后直接崩溃</h5><p>在调用刷新的函数中调用 recyclerView.scrollToPosition(0)  PS: 不要在viewmodel的observe方法中调用</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>记录向</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>bug</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2022/01/13/Resume/"/>
+    <url>/2022/01/13/Resume/</url>
+    
+    <content type="html"><![CDATA[<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul><li>手机：16620401610</li><li>Email：<a href="mailto:&#99;&#111;&#x6e;&#x6e;&#x6f;&#114;&#46;&#x77;&#121;&#104;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#99;&#111;&#x6e;&#x6e;&#x6f;&#114;&#46;&#x77;&#121;&#104;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;</a></li></ul><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul><li>吴英昊 / 男 / 1998</li><li>学校：广州开放大学（本科）</li><li>专业：计算机科学与技术</li><li>现居地：广东 东莞</li><li>期望职位：Android 初级工程师</li><li>GitHub：<a href="https://github.com/Connorxxx">https://github.com/Connorxxx</a></li></ul><h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2><ul><li><strong>Android</strong>：熟悉常见四大组件以及 UI 的开发</li><li><strong>Java</strong>：熟练掌握 Java 基础知识</li><li><strong>Kotlin</strong>：熟练掌握 Kotlin 基础知识</li><li><strong>MVVM</strong>： 擅长MVVM架构设计</li><li><strong>Linux</strong>：熟练使用 Linux</li></ul><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><ul><li><a href="https://github.com/Connorxxx/SunnyWeather">SunnyWeather</a>：天气预报App，采用Kotlin编写，MD设计，MVVM架构</li><li><a href="https://github.com/Connorxxx/ACGSearch">ACGSearch</a>：以图搜图App，采用Kotlin编写，MD设计，MVVM架构</li><li><a href="https://github.com/Connorxxx/Splashgram">Splashgram</a>:  浏览图片、设置壁纸APP, 采用Kotlin编写，MD设计，MVVM架构，DataBinding</li></ul><h2 id="自我总结"><a href="#自我总结" class="headerlink" title="自我总结"></a>自我总结</h2><ul><li>热爱技术和代码</li><li>注重代码质量和细节</li><li>喜欢学习新技术并且愿意深入钻研</li><li>有很好的自学能力</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>FFmpeg 合并多个 mp4</title>
     <link href="/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/"/>
     <url>/2021/11/27/FFmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4/</url>

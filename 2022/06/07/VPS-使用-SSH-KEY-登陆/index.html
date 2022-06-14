@@ -16,15 +16,15 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta name="description" content="创建文件并设置权限mkdir ~&#x2F;.ssh touch ~&#x2F;.ssh&#x2F;authorized_keys chmod 600 ~&#x2F;.ssh&#x2F;authorized_keys  之后将本地的公钥复制到authorized_keys 修改SSH配置文件有注释就取消注释，没有就添加，或者直接添加也可以 RSAAuthentication yes PubkeyAuthentication yes Authori">
+  <meta name="description" content="创建文件并设置权限mkdir ~&#x2F;.ssh touch ~&#x2F;.ssh&#x2F;authorized_keys chmod 600 ~&#x2F;.ssh&#x2F;authorized_keys  之后将本地的公钥复制到authorized_keys 修改SSH配置文件文件位置&#x2F;etc&#x2F;ssh&#x2F;sshd_config 有注释就取消注释，没有就添加，或者直接添加也可以 RSAAuthentication yes PubkeyA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VPS 使用 SSH-KEY 登陆">
 <meta property="og:url" content="https://www.wuyinghao.cn/2022/06/07/VPS-%E4%BD%BF%E7%94%A8-SSH-KEY-%E7%99%BB%E9%99%86/index.html">
 <meta property="og:site_name" content="我的技术分享">
-<meta property="og:description" content="创建文件并设置权限mkdir ~&#x2F;.ssh touch ~&#x2F;.ssh&#x2F;authorized_keys chmod 600 ~&#x2F;.ssh&#x2F;authorized_keys  之后将本地的公钥复制到authorized_keys 修改SSH配置文件有注释就取消注释，没有就添加，或者直接添加也可以 RSAAuthentication yes PubkeyAuthentication yes Authori">
+<meta property="og:description" content="创建文件并设置权限mkdir ~&#x2F;.ssh touch ~&#x2F;.ssh&#x2F;authorized_keys chmod 600 ~&#x2F;.ssh&#x2F;authorized_keys  之后将本地的公钥复制到authorized_keys 修改SSH配置文件文件位置&#x2F;etc&#x2F;ssh&#x2F;sshd_config 有注释就取消注释，没有就添加，或者直接添加也可以 RSAAuthentication yes PubkeyA">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-07T07:10:59.000Z">
-<meta property="article:modified_time" content="2022-06-07T07:22:07.603Z">
+<meta property="article:modified_time" content="2022-06-14T11:19:28.116Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="vps">
 <meta name="twitter:card" content="summary_large_image">
@@ -198,7 +198,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      268 字
+      292 字
     </span>
   
 
@@ -252,7 +252,8 @@ touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys</code></pre></div>
 
 <p>之后将本地的公钥复制到<code>authorized_keys</code></p>
-<h3 id="修改SSH配置文件"><a href="#修改SSH配置文件" class="headerlink" title="修改SSH配置文件"></a>修改SSH配置文件</h3><p>有注释就取消注释，没有就添加，或者直接添加也可以</p>
+<h3 id="修改SSH配置文件"><a href="#修改SSH配置文件" class="headerlink" title="修改SSH配置文件"></a>修改SSH配置文件</h3><p>文件位置<code>/etc/ssh/sshd_config</code></p>
+<p>有注释就取消注释，没有就添加，或者直接添加也可以</p>
 <div class="code-wrapper"><pre><code class="hljs shell">RSAAuthentication yes
 PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
